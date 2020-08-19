@@ -3,14 +3,12 @@ import java.util.Scanner;
 public class Duke {
 
     private static final String LINE = "\t____________________________________________________________" + System.lineSeparator();
-    private static String[] list = new String[100];
-    private static int listSize = 0;
+    private static TaskList taskList;
 
     public static void printList() {
-        System.out.print(LINE);
-        for(int i = 0; i < listSize; i++) {
-            System.out.printf("\t%d. %s\n", i + 1, list[i]);
-        }
+        System.out.print(LINE +
+                "\tHere are the tasks in your list:\n");
+        taskList.printTaskList();
         System.out.println(LINE);
     }
 
@@ -18,13 +16,29 @@ public class Duke {
         System.out.println(LINE +
                 "\tadded: "+ input + System.lineSeparator() +
                 LINE);
-        list[listSize] = input;
-        listSize++;
+        taskList.addTask(input);
+    }
+
+    public static void markDone(int listOrder) {
+        System.out.println(LINE +
+                "\tNice! I've marked this task as done:");
+        taskList.markTaskDone(listOrder);
+        System.out.println(LINE);
+    }
+
+    public static boolean isInteger(String string) {
+        for(char digit : string.toCharArray()) {
+            if(!Character.isDigit(digit)){
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input = "";
+        taskList = new TaskList();
 
         System.out.println(LINE +
                 "\tHello! I'm Duke\n" +
@@ -33,12 +47,26 @@ public class Duke {
 
         while(true) {
             input = scanner.nextLine();
-            if(input.toLowerCase().equals("bye"))
+            if (input.trim().toLowerCase().equals("bye"))
                 break;
-            else if(input.toLowerCase().equals("list"))
+            else if (input.trim().toLowerCase().equals("list"))
                 printList();
-            else if(listSize < 100)
+            else if (input.trim().toLowerCase().startsWith("done ")) {
+                String inputCheck = input.trim().substring(5).trim();
+                if (isInteger(inputCheck)) {
+                    int number = Integer.parseInt(inputCheck);
+                    if (number <= taskList.getTaskListSize() && number > 0)
+                        markDone(Integer.parseInt(inputCheck));
+                    else
+                        addList(input);
+                }
+                else
+                    addList(input);
+            }
+            else if (taskList.getTaskListSize() < 100 && !input.isBlank())
                 addList(input);
+            else if(!input.isBlank())
+                System.out.println("\tlist is full");
         }
 
 
