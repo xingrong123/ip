@@ -1,31 +1,75 @@
-import java.util.LinkedList;
-
 public class TaskList {
-    private LinkedList<Task> list;
+    private Task[] tasklist;
+    private int taskCount;
+    public static final int MAXSIZE = 100;
 
     public TaskList() {
-        list = new LinkedList<>();
+        tasklist = new Task[100];
     }
 
     public void printTaskList() {
-        for(int i = 0; i < list.size(); i++) {
-            System.out.printf("\t%d.[%s] %s\n", i+1, list.get(i).getStatusIcon(), list.get(i).getDescription());
-        }
+        UserInterface.showList(tasklist, taskCount);
     }
 
-    public void addTask(String description) {
-        list.add(new Task(description));
+    public void addTask(String description, TaskType taskType) {
+        Task task = null;
+        task = createTask(description, taskType, task);
+        addTaskToList(task);
+        UserInterface.showAddTask(task, taskCount);
+    }
+
+    private Task createTask(String description, TaskType taskType, Task task) {
+        switch (taskType) {
+        case TODO:
+            task = addTodo(description);
+            break;
+        case DEADLINE:
+            task = addDeadline(description);
+            break;
+        case EVENT:
+            task = addEvent(description);
+            break;
+        }
+        return task;
+    }
+
+    private void addTaskToList(Task task) {
+        tasklist[taskCount] = task;
+        taskCount++;
+    }
+
+    private Task addTodo(String description) {
+        Task task;
+        task = new Todo(description);
+        return task;
+    }
+
+    private Task addDeadline(String description) {
+        Task task;
+        int index = description.indexOf(Deadline.BY_KEYWORD);
+        String deadline = description.substring(index + Deadline.BY_KEYWORD.length());
+        description = description.substring(0, index);
+        task = new Deadline(description, deadline);
+        return task;
+    }
+
+    private Task addEvent(String description) {
+        Task task;
+        int index = description.indexOf(Event.AT_KEYWORD);
+        String at = description.substring(index + Event.AT_KEYWORD.length());
+        description = description.substring(0, index);
+        task = new Event(description, at);
+        return task;
     }
 
     public void markTaskDone(int listOrder) {
-        Task task = list.get(listOrder - 1);
+        Task task = tasklist[listOrder - 1];
         task.markDone();
-        System.out.printf("\t  [%s] %s\n", task.getStatusIcon(), task.getDescription());
+        UserInterface.showMarkTaskDone(task);
     }
 
-    public int getTaskListSize() {
-        return list.size();
+    public int getTaskCount() {
+        return taskCount;
     }
-
 
 }
