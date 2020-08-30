@@ -1,0 +1,34 @@
+
+done
+jello
+list
+todo adf asdf asdf
+deadlineadsf /by asdf
+deadline asdf /byasdf
+deadline asdf/by asdf
+deadline asdf /by asdf
+deadline /by asdf
+deadline asdf /by
+list
+done 2
+list
+event asdf /by asdf
+event asdf /at asdf
+event adf/at asdf
+event /at asdf
+event adgga /at
+todo asdf
+todowfaof
+todo asdfas a
+todo asdfaf
+list
+todo sdfasfa
+todo adsfasfasf
+todo adsfasof
+todo asdfasfa
+done 11
+done 10
+list
+todo adsfafaf
+ bye
+bye

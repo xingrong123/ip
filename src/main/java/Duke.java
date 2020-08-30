@@ -11,7 +11,7 @@ public class Duke {
 
         UserInterface.showWelcomeScreen();
 
-        while(true) {
+        while (true) {
             input = scanner.nextLine();
             if (input.equals("bye")) {
                 break;
@@ -45,7 +45,7 @@ public class Duke {
     }
 
     private static void checkTaskType(String input) {
-        if (input.startsWith("todo ")){
+        if (input.startsWith("todo ")) {
             checkValidTodo(input);
         } else if (input.startsWith("deadline ")) {
             checkValidDeadline(input);
@@ -97,8 +97,8 @@ public class Duke {
     }
 
     public static boolean isInteger(String string) {
-        for(char digit : string.toCharArray()) {
-            if(!Character.isDigit(digit)){
+        for (char digit : string.toCharArray()) {
+            if (!Character.isDigit(digit)) {
                 return false;
             }
         }

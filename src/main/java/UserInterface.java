@@ -28,7 +28,7 @@ public class UserInterface {
     public static void showAddTask(Task task, int taskCount) {
         String taskCountStr = taskCount + (taskCount == 1 ? " task" : " tasks");
         System.out.println(UserInterface.LINE
-                + "\tGot it. I've added this task: " + System.lineSeparator()
+                + "\tGot it. I've added this task:" + System.lineSeparator()
                 + "\t  " + task + System.lineSeparator()
                 + "\tNow you have " + taskCountStr + " in the list." + System.lineSeparator()
                 + UserInterface.LINE);
