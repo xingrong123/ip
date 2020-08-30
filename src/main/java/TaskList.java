@@ -1,21 +1,25 @@
 public class TaskList {
+    public static final int MAXSIZE = 100;
+    public static final String LIST_KW = "list";
+    private static final int DescAndAtCount = 2;
+    private static final int DescAndByCount = 2;
     private Task[] tasklist;
     private int taskCount;
-    public static final int MAXSIZE = 100;
+
 
     public TaskList() {
-        tasklist = new Task[100];
+        tasklist = new Task[MAXSIZE];
     }
 
     public void printTaskList() {
-        UserInterface.showList(tasklist, taskCount);
+        UserInterface.showsList(tasklist, taskCount);
     }
 
     public void addTask(String description, TaskType taskType) {
         Task task = null;
         task = createTask(description, taskType, task);
         addTaskToList(task);
-        UserInterface.showAddTask(task, taskCount);
+        UserInterface.showsAddTask(task, taskCount);
     }
 
     private Task createTask(String description, TaskType taskType, Task task) {
@@ -44,20 +48,20 @@ public class TaskList {
         return task;
     }
 
-    private Task addDeadline(String description) {
+    private Task addDeadline(String input) {
         Task task;
-        int index = description.indexOf(Deadline.BY_KEYWORD);
-        String deadline = description.substring(index + Deadline.BY_KEYWORD.length());
-        description = description.substring(0, index);
-        task = new Deadline(description, deadline);
+        String[] descAndAt = input.split(Deadline.BY_KW, DescAndByCount);
+        String description = descAndAt[0];
+        String by = descAndAt[1];
+        task = new Deadline(description, by);
         return task;
     }
 
-    private Task addEvent(String description) {
+    private Task addEvent(String input) {
         Task task;
-        int index = description.indexOf(Event.AT_KEYWORD);
-        String at = description.substring(index + Event.AT_KEYWORD.length());
-        description = description.substring(0, index);
+        String[] descAndAt = input.split(Event.AT_KW, DescAndAtCount);
+        String description = descAndAt[0];
+        String at = descAndAt[1];
         task = new Event(description, at);
         return task;
     }
@@ -65,7 +69,7 @@ public class TaskList {
     public void markTaskDone(int listOrder) {
         Task task = tasklist[listOrder - 1];
         task.markDone();
-        UserInterface.showMarkTaskDone(task);
+        UserInterface.showsMarkTaskDone(task);
     }
 
     public int getTaskCount() {

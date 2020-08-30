@@ -1,4 +1,7 @@
 public class Task {
+    public static final String DONE_KW = "done ";
+    private static final String TICK = "\u2713";
+    private static final String CROSS = "\u2718";
     protected String description;
     protected boolean isDone;
     protected TaskType taskType;
@@ -15,7 +18,7 @@ public class Task {
 
     public String getStatusIcon() {
         // return tick or X symbols
-        return (isDone ? "\u2713" : "\u2718");
+        return (isDone ? TICK : CROSS);
     }
 
     public String getDescription() {

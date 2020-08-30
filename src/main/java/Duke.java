@@ -3,98 +3,118 @@ import java.util.Scanner;
 public class Duke {
 
     private static TaskList taskList;
+    private static final boolean EXIT = false;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        boolean notExit;
         String input = "";
         taskList = new TaskList();
 
-        UserInterface.showWelcomeScreen();
+        UserInterface.showsWelcomeScreen();
 
-        while (true) {
+        do {
+
             input = scanner.nextLine();
-            if (input.equals("bye")) {
-                break;
-            } else {
-                checkInput(input);
-            }
-        }
+            notExit = checksInput(input);
 
-        UserInterface.showExitScreen();
+        } while (notExit);
+
+        UserInterface.showsExitScreen();
     }
 
-    public static void checkInput(String input) {
-        if (input.equals("list")) {
+
+    public static boolean checksInput(String input) {
+        if (input.equals(UserInterface.BYE_KW)) {
+            return EXIT;
+        } else if (input.equals(TaskList.LIST_KW)) {
             taskList.printTaskList();
-        } else if (input.startsWith("done ")) {
-            markTaskDone(input);
+        } else if (input.startsWith(Task.DONE_KW)) {
+            marksTaskDone(input);
         } else if (taskList.getTaskCount() < TaskList.MAXSIZE) {
-            checkTaskType(input);
+            checksTaskType(input);
+        }
+        return !EXIT;
+    }
+
+
+    private static void marksTaskDone(String input) {
+        String integerCheck = input.substring(Task.DONE_KW.length()).trim();
+        if (checksValidDone(integerCheck)) {
+            taskList.markTaskDone(Integer.parseInt(integerCheck));
         }
     }
 
-    private static void markTaskDone(String input) {
-        String integerCheck = input.substring("done ".length()).trim();
+
+    private static boolean checksValidDone(String integerCheck) {
         if (isInteger(integerCheck)) {
             int taskOrder = Integer.parseInt(integerCheck);
-            // Checks if number after done is valid
-            if (taskOrder <= taskList.getTaskCount() && taskOrder > 0) {
-                taskList.markTaskDone(Integer.parseInt(integerCheck));
-            }
+            return taskOrder <= taskList.getTaskCount() && taskOrder > 0;
+        }
+        return false;
+    }
+
+
+    private static void checksTaskType(String input) {
+        if (input.startsWith(Todo.TODO_KW)) {
+            checksValidTodo(input);
+        } else if (input.startsWith(Deadline.DEADLINE_KW)) {
+            checksValidDeadline(input);
+        } else if (input.startsWith(Event.EVENT_KW)) {
+            checksValidEvent(input);
         }
     }
 
-    private static void checkTaskType(String input) {
-        if (input.startsWith("todo ")) {
-            checkValidTodo(input);
-        } else if (input.startsWith("deadline ")) {
-            checkValidDeadline(input);
-        } else if (input.startsWith("event ")) {
-            checkValidEvent(input);
+
+    private static void checksValidTodo(String input) {
+        if (checksForEmptyDescriptionTodo(input)) {
+            taskList.addTask(input.substring(Todo.TODO_KW.length()), TaskType.TODO);
         }
     }
 
-    private static void checkValidTodo(String input) {
-        if (noEmptyDescriptionTodo(input)) {
-            taskList.addTask(input.substring("todo ".length()), TaskType.TODO);
+
+    private static void checksValidDeadline(String input) {
+        if (checksForEmptyDescriptionDeadline(input)
+                && input.contains(Deadline.BY_KW)
+                && checksForEmptyByDeadline(input)) {
+            taskList.addTask(input.substring(Deadline.DEADLINE_KW.length()), TaskType.DEADLINE);
         }
     }
 
-    private static void checkValidDeadline(String input) {
-        if (noEmptyDescriptionDeadline(input)
-                && input.contains(Deadline.BY_KEYWORD)
-                && noEmptyByDeadline(input)) {
-            taskList.addTask(input.substring("deadline ".length()), TaskType.DEADLINE);
+
+    private static void checksValidEvent(String input) {
+        if (checksForEmptyDescriptionEvent(input)
+                && input.contains(Event.AT_KW)
+                && checksForEmptyAtEvent(input)) {
+            taskList.addTask(input.substring(Event.EVENT_KW.length()), TaskType.EVENT);
         }
     }
 
-    private static void checkValidEvent(String input) {
-        if (noEmptyDescriptionEvent(input)
-                && input.contains(Event.AT_KEYWORD)
-                && noEmptyAtEvent(input)) {
-            taskList.addTask(input.substring("event ".length()), TaskType.EVENT);
-        }
+
+    private static boolean checksForEmptyDescriptionTodo(String input) {
+        return !input.trim().equals(Todo.TODO_KW.trim());
     }
 
-    private static boolean noEmptyDescriptionTodo(String input) {
-        return !input.trim().equals("todo");
+
+    private static boolean checksForEmptyDescriptionDeadline(String input) {
+        return !input.substring(Deadline.DEADLINE_KW.length()).trim().startsWith(Deadline.BY_KW.trim());
     }
 
-    private static boolean noEmptyDescriptionDeadline(String input) {
-        return !input.substring("deadline".length()).trim().startsWith(Deadline.BY_KEYWORD.trim());
+
+    private static boolean checksForEmptyByDeadline(String input) {
+        return !input.trim().endsWith(Deadline.BY_KW.trim());
     }
 
-    private static boolean noEmptyByDeadline(String input) {
-        return !input.trim().endsWith(Deadline.BY_KEYWORD.trim());
+
+    private static boolean checksForEmptyDescriptionEvent(String input) {
+        return !input.substring(Event.EVENT_KW.length()).trim().startsWith(Event.AT_KW.trim());
     }
 
-    private static boolean noEmptyDescriptionEvent(String input) {
-        return !input.substring("event".length()).trim().startsWith(Event.AT_KEYWORD.trim());
+
+    private static boolean checksForEmptyAtEvent(String input) {
+        return !input.trim().endsWith(Event.AT_KW.trim());
     }
 
-    private static boolean noEmptyAtEvent(String input) {
-        return !input.trim().endsWith(Event.AT_KEYWORD.trim());
-    }
 
     public static boolean isInteger(String string) {
         for (char digit : string.toCharArray()) {

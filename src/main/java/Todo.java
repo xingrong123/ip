@@ -1,4 +1,5 @@
 public class Todo extends Task{
+    public static final String TODO_KW = "todo ";
 
     public Todo(String description) {
         super(description, TaskType.TODO);

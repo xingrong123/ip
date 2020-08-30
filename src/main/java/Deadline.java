@@ -1,6 +1,7 @@
 public class Deadline extends Task{
-    public static final String BY_KEYWORD = " /by ";
-    private String deadline;
+    public static final String BY_KW = " /by ";
+    public static final String DEADLINE_KW = "deadline ";
+    private final String deadline;
 
     public Deadline(String description, String deadline) {
         super(description, TaskType.DEADLINE);
