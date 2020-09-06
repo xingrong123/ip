@@ -1,3 +1,5 @@
+package duke.task;
+
 public class Task {
     public static final String DONE_KW = "done";
     private static final String TICK = "\u2713";

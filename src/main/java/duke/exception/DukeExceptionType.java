@@ -1,3 +1,5 @@
+package duke.exception;
+
 public enum DukeExceptionType {
     EMPTY_DESCRIPTION,
     INVALID_TASK_FORMAT,

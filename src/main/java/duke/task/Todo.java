@@ -1,3 +1,8 @@
+package duke.task;
+
+import duke.exception.DukeException;
+import duke.exception.DukeExceptionType;
+
 public class Todo extends Task{
     public static final String TODO_KW = "todo";
 

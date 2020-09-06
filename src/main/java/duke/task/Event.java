@@ -1,3 +1,8 @@
+package duke.task;
+
+import duke.exception.DukeException;
+import duke.exception.DukeExceptionType;
+
 public class Event extends Task{
     public static final String AT_KW = " /at ";
     public static final String EVENT_KW = "event";

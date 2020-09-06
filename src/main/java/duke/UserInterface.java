@@ -1,3 +1,8 @@
+package duke;
+
+import duke.task.Task;
+import duke.task.TaskType;
+
 public class UserInterface {
     private static final String LINE = "\t____________________________________________________________"
             + System.lineSeparator();
@@ -5,7 +10,7 @@ public class UserInterface {
 
     public static void showWelcomeScreen() {
         System.out.println(LINE
-                + "\tHello! I'm Duke\n"
+                + "\tHello! I'm duke.Duke\n"
                 + "\tWhat can I do for you?\n"
                 + LINE);
     }
