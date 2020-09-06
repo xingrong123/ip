@@ -1,3 +1,9 @@
+package duke.task;
+
+import duke.exception.DukeException;
+import duke.exception.DukeExceptionType;
+import duke.UserInterface;
+
 public class TaskList {
     private static final int MAXSIZE = 100;
     public static final String LIST_KW = "list";

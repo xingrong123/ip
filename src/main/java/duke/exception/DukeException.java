@@ -1,3 +1,8 @@
+package duke.exception;
+
+import duke.UserInterface;
+import duke.task.TaskType;
+
 public class DukeException extends Exception{
     private TaskType taskType = null;
     private final DukeExceptionType dukeExceptionType;

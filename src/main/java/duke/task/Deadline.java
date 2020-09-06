@@ -1,4 +1,9 @@
-public class Deadline extends Task{
+package duke.task;
+
+import duke.exception.DukeException;
+import duke.exception.DukeExceptionType;
+
+public class Deadline extends Task {
     public static final String BY_KW = " /by ";
     public static final String DEADLINE_KW = "deadline";
     private final String deadline;
