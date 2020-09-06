@@ -1,8 +1,6 @@
 public class TaskList {
-    public static final int MAXSIZE = 100;
+    private static final int MAXSIZE = 100;
     public static final String LIST_KW = "list";
-    private static final int DescAndAtCount = 2;
-    private static final int DescAndByCount = 2;
     private Task[] tasklist;
     private int taskCount;
 
@@ -12,26 +10,30 @@ public class TaskList {
     }
 
     public void printTaskList() {
-        UserInterface.showsList(tasklist, taskCount);
+        UserInterface.showTaskList(tasklist, taskCount);
     }
 
-    public void addTask(String description, TaskType taskType) {
-        Task task = null;
-        task = createTask(description, taskType, task);
+    public void addTask(String input, TaskType taskType) throws DukeException {
+        if (taskCount == MAXSIZE) {
+            throw new DukeException(DukeExceptionType.FULL_TASK_LIST);
+        }
+        Task task = createTask(input, taskType);
         addTaskToList(task);
-        UserInterface.showsAddTask(task, taskCount);
+        UserInterface.showAddTask(task, taskCount);
     }
 
-    private Task createTask(String description, TaskType taskType, Task task) {
+    private Task createTask(String input, TaskType taskType) throws DukeException {
+        Task task = null;
+
         switch (taskType) {
         case TODO:
-            task = addTodo(description);
+            task = addTodo(input);
             break;
         case DEADLINE:
-            task = addDeadline(description);
+            task = addDeadline(input);
             break;
         case EVENT:
-            task = addEvent(description);
+            task = addEvent(input);
             break;
         }
         return task;
@@ -42,38 +44,34 @@ public class TaskList {
         taskCount++;
     }
 
-    private Task addTodo(String description) {
+    private Task addTodo(String input) throws DukeException {
         Task task;
+        String description = Todo.getDescription(input);
         task = new Todo(description);
         return task;
     }
 
-    private Task addDeadline(String input) {
+    private Task addDeadline(String input) throws DukeException {
         Task task;
-        String[] descAndAt = input.split(Deadline.BY_KW, DescAndByCount);
-        String description = descAndAt[0];
-        String by = descAndAt[1];
+        String[] descAndBy = Deadline.getDescAndBy(input);
+        String description = descAndBy[0];
+        String by = descAndBy[1];
         task = new Deadline(description, by);
         return task;
     }
 
-    private Task addEvent(String input) {
+    private Task addEvent(String input) throws DukeException {
         Task task;
-        String[] descAndAt = input.split(Event.AT_KW, DescAndAtCount);
+        String[] descAndAt = Event.getDescAndAt(input);
         String description = descAndAt[0];
         String at = descAndAt[1];
         task = new Event(description, at);
         return task;
     }
 
-    public void markTaskDone(int listOrder) {
-        Task task = tasklist[listOrder - 1];
+    public void markTaskDone(int taskOrder) {
+        Task task = tasklist[taskOrder - 1];
         task.markDone();
-        UserInterface.showsMarkTaskDone(task);
+        UserInterface.showMarkTaskDone(task);
     }
-
-    public int getTaskCount() {
-        return taskCount;
-    }
-
 }

@@ -1,5 +1,5 @@
 public class Task {
-    public static final String DONE_KW = "done ";
+    public static final String DONE_KW = "done";
     private static final String TICK = "\u2713";
     private static final String CROSS = "\u2718";
     protected String description;
