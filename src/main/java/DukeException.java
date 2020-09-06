@@ -26,7 +26,7 @@ public class DukeException extends Exception{
             UserInterface.printUnknownInputMessage();
             break;
         case INVALID_DONE_NUMBER:
-            UserInterface.printUseValidNumberMessage();
+            UserInterface.printUseValidNumberForDoneMessage();
             break;
         }
     }

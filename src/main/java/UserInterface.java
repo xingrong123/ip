@@ -59,9 +59,9 @@ public class UserInterface {
         System.out.println(LINE);
     }
 
-    public static void printUseValidNumberMessage() {
+    public static void printUseValidNumberForDoneMessage() {
         System.out.println(LINE
-                + "\tOOPS!!! Please enter valid number.");
+                + "\tOOPS!!! Please enter valid number for done command.");
         System.out.println(LINE);
     }
 

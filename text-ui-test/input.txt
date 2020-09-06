@@ -1,9 +1,9 @@
 jello
 list
-todo
+  todo
 todo asdf
 todo adf asdf asdf
-deadline
+  deadline
 deadline asdf
 deadline /by
 deadline /by asdf
@@ -18,15 +18,15 @@ deadlineasdf /by asdf
 deadline asdf /at asdf
 deadline asdf /by asdf
 deadline asdf dsfgs /by asdf asdf
-list
+  list
 done 2
 list
 event
-event asdf
+  event asdf
 event /at
 event /at asdf
 event asdf /at
-eventasdf/atasdf
+  eventasdf/atasdf
 event asdf/atasdf
 eventasdf /atasdf
 eventasdf/at asdf
@@ -42,11 +42,11 @@ todo asdf
 list
 todo sdfasfa
 todo adsfasfasf
-todo adsfasof
+  todo adsfasof
 todo asdfasfa
 done
 done 50
-done 5
+  done 5
 done -1
 done 4.5
 done rrw
@@ -60,7 +60,7 @@ todo asdf
 todo asdf
 todo asdf
 todo asdf
-todo asdf
+  todo asdf
 todo asdf
 todo asdf
 todo asdf
