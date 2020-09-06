@@ -1,34 +1,144 @@
-
-done
 jello
 list
+todo
+todo asdf
 todo adf asdf asdf
-deadlineadsf /by asdf
-deadline asdf /byasdf
-deadline asdf/by asdf
-deadline asdf /by asdf
+deadline
+deadline asdf
+deadline /by
 deadline /by asdf
 deadline asdf /by
+deadlineadsf/byasdf
+deadline asdf/byasdf
+deadlineasdf /byasdf
+deadlineasdf/by asdf
+deadline adsf /byasdf
+deadline asdf/by asdf
+deadlineasdf /by asdf
+deadline asdf /at asdf
+deadline asdf /by asdf
+deadline asdf dsfgs /by asdf asdf
 list
 done 2
 list
+event
+event asdf
+event /at
+event /at asdf
+event asdf /at
+eventasdf/atasdf
+event asdf/atasdf
+eventasdf /atasdf
+eventasdf/at asdf
+event asdf /atasdf
+event asdf/at asdf
+eventasdf /at asdf
 event asdf /by asdf
 event asdf /at asdf
-event adf/at asdf
-event /at asdf
-event adgga /at
+event asdf asdf /at asdf asdf
+list
 todo asdf
-todowfaof
-todo asdfas a
-todo asdfaf
+todo asdf
 list
 todo sdfasfa
 todo adsfasfasf
 todo adsfasof
 todo asdfasfa
-done 11
-done 10
+done
+done 50
+done 5
+done -1
+done 4.5
+done rrw
 list
-todo adsfafaf
- bye
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+todo asdf
+list
 bye
