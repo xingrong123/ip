@@ -86,4 +86,10 @@ public class UserInterface {
         System.out.println(LINE);
     }
 
+
+    public static void printErrorWritingToFile(String message) {
+        System.out.println(LINE
+                + "\tError writing to file: " + message);
+        System.out.println(LINE);
+    }
 }

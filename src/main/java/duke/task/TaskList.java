@@ -1,5 +1,6 @@
 package duke.task;
 
+import duke.FileWriting;
 import duke.exception.DukeException;
 import duke.exception.DukeExceptionType;
 import duke.UserInterface;
@@ -28,6 +29,7 @@ public class TaskList {
         Task task = createTask(input, taskType);
         addTaskToList(task);
         UserInterface.showAddTask(task, tasklist.size());
+        FileWriting.saveTaskList(getDataOfAllTasks());
     }
 
     private Task createTask(String input, TaskType taskType) throws DukeException {
@@ -76,15 +78,25 @@ public class TaskList {
         return task;
     }
 
-    public void markTaskDone(int taskOrder) {
+    public void markTaskDone(int taskOrder) throws DukeException {
         Task task = tasklist.get(taskOrder - 1);
         task.markDone();
         UserInterface.showMarkTaskDone(task);
+        FileWriting.saveTaskList(getDataOfAllTasks());
     }
 
-    public void deleteTask(int taskOrder) {
+    private String getDataOfAllTasks() {
+        StringBuilder data = new StringBuilder();
+        for (Task task : tasklist) {
+            data.append(task.getData()).append(System.lineSeparator());
+        }
+        return data.toString().trim();
+    }
+
+    public void deleteTask(int taskOrder) throws DukeException {
         Task task = tasklist.get(taskOrder - 1);
         tasklist.remove(taskOrder - 1);
         UserInterface.showDeleteTask(task, tasklist.size());
+        FileWriting.saveTaskList(getDataOfAllTasks());
     }
 }

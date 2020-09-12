@@ -6,11 +6,11 @@ import duke.exception.DukeExceptionType;
 public class Deadline extends Task {
     public static final String BY_KW = " /by ";
     public static final String DEADLINE_KW = "deadline";
-    private final String deadline;
+    private final String by;
 
     public Deadline(String description, String deadline) {
         super(description.trim(), TaskType.DEADLINE);
-        this.deadline = deadline.trim();
+        this.by = deadline.trim();
     }
 
     public static String[] getDescAndBy(String description) throws DukeException {
@@ -30,6 +30,11 @@ public class Deadline extends Task {
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (by: " + deadline + ")";
+        return "[D]" + super.toString() + " (by: " + by + ")";
+    }
+
+    @Override
+    public String getData() {
+        return "D" + SEPARATOR + super.getData() + SEPARATOR + by;
     }
 }

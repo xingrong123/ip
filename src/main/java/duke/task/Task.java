@@ -4,6 +4,7 @@ public class Task {
     public static final String DONE_KW = "done";
     private static final String TICK = "\u2713";
     private static final String CROSS = "\u2718";
+    protected static final String SEPARATOR = " | ";
     protected String description;
     protected boolean isDone;
     protected TaskType taskType;
@@ -25,6 +26,10 @@ public class Task {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getData() {
+        return (isDone ? 1 : 0) + SEPARATOR + description;
     }
 
     @Override

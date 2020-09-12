@@ -6,4 +6,5 @@ public enum DukeExceptionType {
     FULL_TASK_LIST,
     UNKNOWN_INPUT,
     INVALID_TASK_NUMBER,
+    WRITE_FILE_ERROR
 }
