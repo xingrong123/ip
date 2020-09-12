@@ -1,5 +1,6 @@
 package duke.task;
 
+import duke.FileWriting;
 import duke.exception.DukeException;
 import duke.exception.DukeExceptionType;
 import duke.UserInterface;
@@ -7,16 +8,16 @@ import duke.UserInterface;
 public class TaskList {
     private static final int MAXSIZE = 100;
     public static final String LIST_KW = "list";
-    private Task[] tasklist;
+    private static Task[] taskList;
     private int taskCount;
 
 
     public TaskList() {
-        tasklist = new Task[MAXSIZE];
+        taskList = new Task[MAXSIZE];
     }
 
     public void printTaskList() {
-        UserInterface.showTaskList(tasklist, taskCount);
+        UserInterface.showTaskList(taskList, taskCount);
     }
 
     public void addTask(String input, TaskType taskType) throws DukeException {
@@ -26,6 +27,7 @@ public class TaskList {
         Task task = createTask(input, taskType);
         addTaskToList(task);
         UserInterface.showAddTask(task, taskCount);
+        FileWriting.saveTaskList(getDataOfAllTasks());
     }
 
     private Task createTask(String input, TaskType taskType) throws DukeException {
@@ -46,7 +48,7 @@ public class TaskList {
     }
 
     private void addTaskToList(Task task) {
-        tasklist[taskCount] = task;
+        taskList[taskCount] = task;
         taskCount++;
     }
 
@@ -75,9 +77,18 @@ public class TaskList {
         return task;
     }
 
-    public void markTaskDone(int taskOrder) {
-        Task task = tasklist[taskOrder - 1];
+    public void markTaskDone(int taskOrder) throws DukeException {
+        Task task = taskList[taskOrder - 1];
         task.markDone();
         UserInterface.showMarkTaskDone(task);
+        FileWriting.saveTaskList(getDataOfAllTasks());
+    }
+
+    private String getDataOfAllTasks() {
+        StringBuilder data = new StringBuilder();
+        for (int i = 0; i < taskCount; i++) {
+            data.append(taskList[i].getData()).append(System.lineSeparator());
+        }
+        return data.toString().trim();
     }
 }

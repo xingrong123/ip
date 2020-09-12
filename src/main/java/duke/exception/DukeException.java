@@ -6,6 +6,7 @@ import duke.task.TaskType;
 public class DukeException extends Exception{
     private TaskType taskType = null;
     private final DukeExceptionType dukeExceptionType;
+    private String message = null;
 
     public DukeException(DukeExceptionType dukeExceptionType) {
         this.dukeExceptionType = dukeExceptionType;
@@ -14,6 +15,11 @@ public class DukeException extends Exception{
     public DukeException(DukeExceptionType dukeExceptionType, TaskType taskType) {
         this.dukeExceptionType = dukeExceptionType;
         this.taskType = taskType;
+    }
+
+    public DukeException(DukeExceptionType dukeExceptionType, String message) {
+        this.dukeExceptionType = dukeExceptionType;
+        this.message = message;
     }
 
     public void printErrorMessage() {
@@ -32,6 +38,9 @@ public class DukeException extends Exception{
             break;
         case INVALID_DONE_NUMBER:
             UserInterface.printUseValidNumberForDoneMessage();
+            break;
+        case WRITE_FILE_ERROR:
+            UserInterface.printErrorWritingToFile(message);
             break;
         }
     }

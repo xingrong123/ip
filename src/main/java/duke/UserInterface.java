@@ -10,7 +10,7 @@ public class UserInterface {
 
     public static void showWelcomeScreen() {
         System.out.println(LINE
-                + "\tHello! I'm duke.Duke\n"
+                + "\tHello! I'm Duke.\n"
                 + "\tWhat can I do for you?\n"
                 + LINE);
     }
@@ -73,6 +73,12 @@ public class UserInterface {
     public static void printEnterValidTaskFormatMessage(TaskType taskType) {
         System.out.println(LINE
                 + "\tOOPS!!! Invalid " + taskType + " format!!");
+        System.out.println(LINE);
+    }
+
+    public static void printErrorWritingToFile(String message) {
+        System.out.println(LINE
+                + "\tError writing to file: " + message);
         System.out.println(LINE);
     }
 }
