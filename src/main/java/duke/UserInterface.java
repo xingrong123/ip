@@ -3,6 +3,8 @@ package duke;
 import duke.task.Task;
 import duke.task.TaskType;
 
+import java.util.ArrayList;
+
 public class UserInterface {
     private static final String LINE = "\t____________________________________________________________"
             + System.lineSeparator();
@@ -10,7 +12,7 @@ public class UserInterface {
 
     public static void showWelcomeScreen() {
         System.out.println(LINE
-                + "\tHello! I'm duke.Duke\n"
+                + "\tHello! I'm Duke.\n"
                 + "\tWhat can I do for you?\n"
                 + LINE);
     }
@@ -21,11 +23,11 @@ public class UserInterface {
                 + LINE);
     }
 
-    public static void showTaskList(Task[] tasklist, int taskCount) {
+    public static void showTaskList(ArrayList<Task> tasklist, int taskCount) {
         System.out.print(UserInterface.LINE
                 + "\tHere are the tasks in your list:\n");
         for(int i = 0; i < taskCount; i++) {
-            System.out.printf("\t%d.%s\n", i+1, tasklist[i]);
+            System.out.printf("\t%d.%s\n", i+1, tasklist.get(i));
         }
         System.out.println(UserInterface.LINE);
     }
@@ -43,6 +45,14 @@ public class UserInterface {
         System.out.println(LINE
                 + "\tNice! I've marked this task as done:");
         System.out.printf("\t  [%s] %s\n", task.getStatusIcon(), task.getDescription());
+        System.out.println(LINE);
+    }
+
+    public static void showDeleteTask(Task task, int taskCount) {
+        System.out.println(LINE
+                + "\tNoted. I've removed this task:");
+        System.out.printf("\t  %s\n", task);
+        System.out.printf("\tNow you have %d tasks in the list." + System.lineSeparator(), taskCount);
         System.out.println(LINE);
     }
 
@@ -64,9 +74,9 @@ public class UserInterface {
         System.out.println(LINE);
     }
 
-    public static void printUseValidNumberForDoneMessage() {
+    public static void printUseValidTaskNumberMessage() {
         System.out.println(LINE
-                + "\tOOPS!!! Please enter valid number for done command.");
+                + "\tOOPS!!! Please enter valid task number.");
         System.out.println(LINE);
     }
 
@@ -75,4 +85,5 @@ public class UserInterface {
                 + "\tOOPS!!! Invalid " + taskType + " format!!");
         System.out.println(LINE);
     }
+
 }

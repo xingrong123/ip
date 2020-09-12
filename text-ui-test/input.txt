@@ -141,4 +141,10 @@ todo asdf
 todo asdf
 todo asdf
 list
+delete1
+delete 1
+delete  1
+delete 123
+delete 100
+delete -12
 bye

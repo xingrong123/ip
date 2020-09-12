@@ -5,5 +5,5 @@ public enum DukeExceptionType {
     INVALID_TASK_FORMAT,
     FULL_TASK_LIST,
     UNKNOWN_INPUT,
-    INVALID_DONE_NUMBER
+    INVALID_TASK_NUMBER,
 }

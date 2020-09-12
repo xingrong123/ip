@@ -30,8 +30,8 @@ public class DukeException extends Exception{
         case UNKNOWN_INPUT:
             UserInterface.printUnknownInputMessage();
             break;
-        case INVALID_DONE_NUMBER:
-            UserInterface.printUseValidNumberForDoneMessage();
+        case INVALID_TASK_NUMBER:
+            UserInterface.printUseValidTaskNumberMessage();
             break;
         }
     }
