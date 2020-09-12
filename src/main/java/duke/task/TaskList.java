@@ -4,28 +4,30 @@ import duke.exception.DukeException;
 import duke.exception.DukeExceptionType;
 import duke.UserInterface;
 
+import java.util.ArrayList;
+
 public class TaskList {
     private static final int MAXSIZE = 100;
     public static final String LIST_KW = "list";
-    private Task[] tasklist;
-    private int taskCount;
+    public static final String DELETE_KW = "delete";
+    private ArrayList<Task> tasklist;
 
 
     public TaskList() {
-        tasklist = new Task[MAXSIZE];
+        tasklist = new ArrayList<>();
     }
 
     public void printTaskList() {
-        UserInterface.showTaskList(tasklist, taskCount);
+        UserInterface.showTaskList(tasklist, tasklist.size());
     }
 
     public void addTask(String input, TaskType taskType) throws DukeException {
-        if (taskCount == MAXSIZE) {
+        if (tasklist.size() == MAXSIZE) {
             throw new DukeException(DukeExceptionType.FULL_TASK_LIST);
         }
         Task task = createTask(input, taskType);
         addTaskToList(task);
-        UserInterface.showAddTask(task, taskCount);
+        UserInterface.showAddTask(task, tasklist.size());
     }
 
     private Task createTask(String input, TaskType taskType) throws DukeException {
@@ -46,8 +48,7 @@ public class TaskList {
     }
 
     private void addTaskToList(Task task) {
-        tasklist[taskCount] = task;
-        taskCount++;
+        tasklist.add(task);
     }
 
     private Task addTodo(String input) throws DukeException {
@@ -76,8 +77,14 @@ public class TaskList {
     }
 
     public void markTaskDone(int taskOrder) {
-        Task task = tasklist[taskOrder - 1];
+        Task task = tasklist.get(taskOrder - 1);
         task.markDone();
         UserInterface.showMarkTaskDone(task);
+    }
+
+    public void deleteTask(int taskOrder) {
+        Task task = tasklist.get(taskOrder - 1);
+        tasklist.remove(taskOrder - 1);
+        UserInterface.showDeleteTask(task, tasklist.size());
     }
 }

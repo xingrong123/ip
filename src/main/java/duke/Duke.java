@@ -41,6 +41,8 @@ public class Duke {
                 taskList.printTaskList();
             } else if (input.startsWith(Task.DONE_KW)) {
                 markTaskDone(input);
+            } else if (input.startsWith(TaskList.DELETE_KW)) {
+                deleteTask(input);
             } else {
                 checkTaskType(input);
             }
@@ -58,13 +60,30 @@ public class Duke {
         String taskOrder = inputCheck.trim();
         try {
             taskList.markTaskDone(Integer.parseInt(taskOrder));
-        } catch (NullPointerException | NumberFormatException | ArrayIndexOutOfBoundsException e) {
-            throw new DukeException(DukeExceptionType.INVALID_DONE_NUMBER);
+        } catch (NullPointerException | NumberFormatException | IndexOutOfBoundsException e) {
+            throw new DukeException(DukeExceptionType.INVALID_TASK_NUMBER);
         }
 
     }
 
     private static void checkForValidDoneFormat(String inputCheck) throws DukeException {
+        if (!inputCheck.startsWith(" ")) {
+            throw new DukeException(DukeExceptionType.UNKNOWN_INPUT);
+        }
+    }
+
+    private static void deleteTask(String input) throws DukeException {
+        String inputCheck = input.substring(TaskList.DELETE_KW.length());
+        checkForValidDeleteFormat(inputCheck);
+        String taskOrder = inputCheck.trim();
+        try {
+            taskList.deleteTask(Integer.parseInt(taskOrder));
+        } catch (NullPointerException | NumberFormatException | IndexOutOfBoundsException e) {
+            throw new DukeException(DukeExceptionType.INVALID_TASK_NUMBER);
+        }
+    }
+
+    private static void checkForValidDeleteFormat(String inputCheck) throws DukeException {
         if (!inputCheck.startsWith(" ")) {
             throw new DukeException(DukeExceptionType.UNKNOWN_INPUT);
         }
