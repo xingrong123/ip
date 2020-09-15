@@ -28,6 +28,17 @@ public class Event extends Task{
         }
     }
 
+    public static Task initEvent(String data) {
+        String[] details = data.split("\\|");
+        String description = details[2].trim();
+        String at = details[3].trim();
+        Task event = new Event(description, at);
+        if (details[1].trim().equals("1")) {
+            event.markDone();
+        }
+        return event;
+    }
+
     @Override
     public String toString() {
         return "[E]" + super.toString() + " (at: " + at + ")";

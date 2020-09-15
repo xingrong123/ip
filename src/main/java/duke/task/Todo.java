@@ -24,6 +24,16 @@ public class Todo extends Task{
         }
     }
 
+    public static Task initTodo(String data) {
+        String[] details = data.split("\\|");
+        String description = details[2].trim();
+        Task todo = new Todo(description);
+        if (details[1].trim().equals("1")) {
+            todo.markDone();
+        }
+        return todo;
+    }
+
     @Override
     public String toString() {
         return "[T]" + super.toString();
