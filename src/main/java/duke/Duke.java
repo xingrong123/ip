@@ -21,8 +21,9 @@ public class Duke {
         boolean isExit;
         String input;
         taskList = new TaskList();
-
+        taskList.initTaskList();
         UserInterface.showWelcomeScreen();
+
 
         do {
             input = scanner.nextLine();
@@ -31,6 +32,8 @@ public class Duke {
 
         UserInterface.showExitScreen();
     }
+
+
 
 
     private static boolean checksInput(String input) {

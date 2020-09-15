@@ -28,6 +28,17 @@ public class Deadline extends Task {
         }
     }
 
+    public static Task initDeadline(String data) {
+        String[] details = data.split("\\|");
+        String description = details[2].trim();
+        String by = details[3].trim();
+        Task deadline = new Deadline(description, by);
+        if (details[1].trim().equals("1")) {
+            deadline.markDone();
+        }
+        return deadline;
+    }
+
     @Override
     public String toString() {
         return "[D]" + super.toString() + " (by: " + by + ")";

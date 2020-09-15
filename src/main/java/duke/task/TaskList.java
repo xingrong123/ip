@@ -1,10 +1,12 @@
 package duke.task;
 
+import duke.FileReading;
 import duke.FileWriting;
 import duke.exception.DukeException;
 import duke.exception.DukeExceptionType;
 import duke.UserInterface;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class TaskList {
@@ -47,6 +49,33 @@ public class TaskList {
             break;
         }
         return task;
+    }
+
+    public void initTaskList() {
+        try {
+            String[] tasks = FileReading.loadTaskList();
+            if (tasks != null) {
+                loadTaskList(tasks);
+            }
+        } catch (FileNotFoundException e) {
+            // No text file containing file detected, program will run without loading tasklist
+        }
+    }
+
+    private void loadTaskList(String[] tasks) {
+        for (String task : tasks) {
+            switch (task.charAt(0)) {
+            case 'T':
+                this.addTaskToList(Todo.initTodo(task));
+                break;
+            case 'D':
+                this.addTaskToList(Deadline.initDeadline(task));
+                break;
+            case 'E':
+                this.addTaskToList(Event.initEvent(task));
+                break;
+            }
+        }
     }
 
     private void addTaskToList(Task task) {
