@@ -4,8 +4,9 @@ import duke.exception.DukeException;
 import duke.exception.DukeExceptionType;
 
 public class Event extends Task{
-    public static final String AT_KW = " /at ";
+    private static final String AT_KW = " /at ";
     public static final String EVENT_KW = "event";
+
     private final String at;
 
     public Event(String description, String at) {
@@ -13,28 +14,30 @@ public class Event extends Task{
         this.at = at.trim();
     }
 
-    public static String[] getDescAndAt(String description) throws DukeException {
-        description = description.substring(EVENT_KW.length());
-        String[] string = description.split(AT_KW);
-        ensureValidEventInput(description, string);
+    public static String[] getDescAndAt(String input) throws DukeException {
+        String descriptionAndAt = input.substring(EVENT_KW.length());
+        String[] string = descriptionAndAt.split(AT_KW);
+        ensureValidEventInput(descriptionAndAt, string);
         return string;
     }
 
-    private static void ensureValidEventInput(String description, String[] string) throws DukeException {
+    private static void ensureValidEventInput(String descriptionAndAt, String[] string) throws DukeException {
         if (string[0].isBlank()) {
             throw new DukeException(DukeExceptionType.EMPTY_DESCRIPTION, TaskType.EVENT);
-        } else if (string.length != 2 || string[1].isBlank() || !description.startsWith(" ")) {
+        } else if (string.length != 2 || string[1].isBlank() || !descriptionAndAt.startsWith(" ")) {
             throw new DukeException(DukeExceptionType.INVALID_TASK_FORMAT, TaskType.EVENT);
         }
     }
 
-    public static Task initEvent(String data) {
+    public static Task initEvent(String data) throws DukeException {
         String[] details = data.split("\\|");
         String description = details[2].trim();
         String at = details[3].trim();
         Task event = new Event(description, at);
-        if (details[1].trim().equals("1")) {
+        if (details[1].trim().compareTo("1") == 0) {
             event.markDone();
+        } else if (details[1].trim().compareTo( "0") != 0) {
+            throw new DukeException(DukeExceptionType.INVALID_TASK_DATA);
         }
         return event;
     }

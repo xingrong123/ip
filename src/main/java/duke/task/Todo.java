@@ -24,12 +24,14 @@ public class Todo extends Task{
         }
     }
 
-    public static Task initTodo(String data) {
+    public static Task initTodo(String data) throws DukeException {
         String[] details = data.split("\\|");
         String description = details[2].trim();
         Task todo = new Todo(description);
-        if (details[1].trim().equals("1")) {
+        if (details[1].trim().compareTo("1") == 0) {
             todo.markDone();
+        } else if (details[1].trim().compareTo( "0") != 0) {
+            throw new DukeException(DukeExceptionType.INVALID_TASK_DATA);
         }
         return todo;
     }

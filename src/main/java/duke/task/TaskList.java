@@ -1,131 +1,85 @@
 package duke.task;
 
-import duke.FileReading;
-import duke.FileWriting;
 import duke.exception.DukeException;
 import duke.exception.DukeExceptionType;
-import duke.UserInterface;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class TaskList {
     private static final int MAXSIZE = 100;
-    public static final String LIST_KW = "list";
-    public static final String DELETE_KW = "delete";
-    private ArrayList<Task> tasklist;
+
+    private ArrayList<Task> taskList;
 
 
     public TaskList() {
-        tasklist = new ArrayList<>();
+        taskList = new ArrayList<>();
     }
 
-    public void printTaskList() {
-        UserInterface.showTaskList(tasklist, tasklist.size());
+    public TaskList(String[] tasks) {
+        taskList = new ArrayList<>();
+        loadTaskList(tasks);
     }
 
-    public void addTask(String input, TaskType taskType) throws DukeException {
-        if (tasklist.size() == MAXSIZE) {
+    public void addTask(Task task) throws DukeException {
+        if (taskList.size() == MAXSIZE) {
             throw new DukeException(DukeExceptionType.FULL_TASK_LIST);
         }
-        Task task = createTask(input, taskType);
-        addTaskToList(task);
-        UserInterface.showAddTask(task, tasklist.size());
-        FileWriting.saveTaskList(getDataOfAllTasks());
-    }
-
-    private Task createTask(String input, TaskType taskType) throws DukeException {
-        Task task = null;
-
-        switch (taskType) {
-        case TODO:
-            task = addTodo(input);
-            break;
-        case DEADLINE:
-            task = addDeadline(input);
-            break;
-        case EVENT:
-            task = addEvent(input);
-            break;
-        }
-        return task;
-    }
-
-    public void initTaskList() {
-        try {
-            String[] tasks = FileReading.loadTaskList();
-            if (tasks != null) {
-                loadTaskList(tasks);
-            }
-        } catch (FileNotFoundException e) {
-            // No text file containing file detected, program will run without loading tasklist
-        }
+        taskList.add(task);
     }
 
     private void loadTaskList(String[] tasks) {
         for (String task : tasks) {
-            switch (task.charAt(0)) {
-            case 'T':
-                this.addTaskToList(Todo.initTodo(task));
-                break;
-            case 'D':
-                this.addTaskToList(Deadline.initDeadline(task));
-                break;
-            case 'E':
-                this.addTaskToList(Event.initEvent(task));
-                break;
-            }
+            loadTask(task);
         }
     }
 
-    private void addTaskToList(Task task) {
-        tasklist.add(task);
+    private void loadTask(String task) {
+        try {
+            switch (task.charAt(0)) {
+            case 'T':
+                taskList.add(Todo.initTodo(task));
+                break;
+            case 'D':
+                taskList.add(Deadline.initDeadline(task));
+                break;
+            case 'E':
+                taskList.add(Event.initEvent(task));
+                break;
+            default:
+                System.out.println("unidentified task");
+                break;
+            }
+        } catch (IndexOutOfBoundsException | DukeException e) {
+            // Invalid task data, skips to the next entry
+        }
     }
 
-    private Task addTodo(String input) throws DukeException {
-        Task task;
-        String description = Todo.getDescription(input);
-        task = new Todo(description);
-        return task;
-    }
-
-    private Task addDeadline(String input) throws DukeException {
-        Task task;
-        String[] descAndBy = Deadline.getDescAndBy(input);
-        String description = descAndBy[0];
-        String by = descAndBy[1];
-        task = new Deadline(description, by);
-        return task;
-    }
-
-    private Task addEvent(String input) throws DukeException {
-        Task task;
-        String[] descAndAt = Event.getDescAndAt(input);
-        String description = descAndAt[0];
-        String at = descAndAt[1];
-        task = new Event(description, at);
-        return task;
-    }
-
-    public void markTaskDone(int taskOrder) throws DukeException {
-        Task task = tasklist.get(taskOrder - 1);
+    public void markTaskDone(int index) {
+        Task task = taskList.get(index);
         task.markDone();
-        UserInterface.showMarkTaskDone(task);
-        FileWriting.saveTaskList(getDataOfAllTasks());
     }
 
-    private String getDataOfAllTasks() {
+    public String getData() {
         StringBuilder data = new StringBuilder();
-        for (Task task : tasklist) {
+        for (Task task : taskList) {
             data.append(task.getData()).append(System.lineSeparator());
         }
         return data.toString().trim();
     }
 
-    public void deleteTask(int taskOrder) throws DukeException {
-        Task task = tasklist.get(taskOrder - 1);
-        tasklist.remove(taskOrder - 1);
-        UserInterface.showDeleteTask(task, tasklist.size());
-        FileWriting.saveTaskList(getDataOfAllTasks());
+    public int getSize() {
+        return taskList.size();
+    }
+
+    public Task getTask(int index) {
+        return taskList.get(index);
+    }
+
+    public ArrayList<Task> getTaskList() {
+        return taskList;
+    }
+
+    public void deleteTask(Task task) {
+        taskList.remove(task);
     }
 }
