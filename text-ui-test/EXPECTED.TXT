@@ -281,97 +281,97 @@
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: Jan 01 1223 1234)
 	Now you have 13 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: Jan 01 1223 0834)
 	Now you have 14 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: Jan 01 1223)
 	Now you have 15 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: Jan 01 1223)
 	Now you have 16 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: Jan 01 1223)
 	Now you have 17 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: Jan 01 1223)
 	Now you have 18 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: 13/13/1223 1234)
 	Now you have 19 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: 1/1/13 1234)
 	Now you have 20 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: Jan 01 1223 1234)
 	Now you have 21 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: Jan 01 1223 0834)
 	Now you have 22 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: Jan 01 1223)
 	Now you have 23 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: Jan 01 1223)
 	Now you have 24 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: Jan 01 1223)
 	Now you have 25 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: Jan 01 1223)
 	Now you have 26 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: 13/13/1223 1234)
 	Now you have 27 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: 1/1/13 1234)
 	Now you have 28 tasks in the list.
 	____________________________________________________________
 
@@ -825,22 +825,22 @@
 	10.[T][✘] adsfasfasf
 	11.[T][✘] adsfasof
 	12.[T][✘] asdfasfa
-	13.[T][✘] asdf
-	14.[T][✘] asdf
-	15.[T][✘] asdf
-	16.[T][✘] asdf
-	17.[T][✘] asdf
-	18.[T][✘] asdf
-	19.[T][✘] asdf
-	20.[T][✘] asdf
-	21.[T][✘] asdf
-	22.[T][✘] asdf
-	23.[T][✘] asdf
-	24.[T][✘] asdf
-	25.[T][✘] asdf
-	26.[T][✘] asdf
-	27.[T][✘] asdf
-	28.[T][✘] asdf
+	13.[E][✘] jaksdfj (at: Jan 01 1223 1234)
+	14.[E][✘] jaksdfj (at: Jan 01 1223 0834)
+	15.[E][✘] jaksdfj (at: Jan 01 1223)
+	16.[E][✘] jaksdfj (at: Jan 01 1223)
+	17.[E][✘] jaksdfj (at: Jan 01 1223)
+	18.[E][✘] jaksdfj (at: Jan 01 1223)
+	19.[E][✘] jaksdfj (at: 13/13/1223 1234)
+	20.[E][✘] jaksdfj (at: 1/1/13 1234)
+	21.[D][✘] jaksdfj (by: Jan 01 1223 1234)
+	22.[D][✘] jaksdfj (by: Jan 01 1223 0834)
+	23.[D][✘] jaksdfj (by: Jan 01 1223)
+	24.[D][✘] jaksdfj (by: Jan 01 1223)
+	25.[D][✘] jaksdfj (by: Jan 01 1223)
+	26.[D][✘] jaksdfj (by: Jan 01 1223)
+	27.[D][✘] jaksdfj (by: 13/13/1223 1234)
+	28.[D][✘] jaksdfj (by: 1/1/13 1234)
 	29.[T][✘] asdf
 	30.[T][✘] asdf
 	31.[T][✘] asdf

@@ -1,17 +1,36 @@
 package duke.task;
 
+import duke.DateTime;
 import duke.exception.DukeException;
 import duke.exception.DukeExceptionType;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 
 public class Event extends Task{
     private static final String AT_KW = " /at ";
     public static final String EVENT_KW = "event";
 
-    private final String at;
+    private String at;
+    private LocalDate atDate = null;
+    private LocalTime atTime = null;
 
     public Event(String description, String at) {
         super(description.trim(), TaskType.EVENT);
-        this.at = at.trim();
+
+
+        try {
+            if (at.contains(" ")) {
+                String[] dateTimeString = at.split(" ", 2);
+                atDate = DateTime.getDate(dateTimeString[0]);
+                atTime = DateTime.getTime(dateTimeString[1]);
+            } else {
+                atDate = DateTime.getDate(at);
+            }
+        } catch (DateTimeParseException e) {
+            this.at = at;
+        }
     }
 
     public static String[] getDescAndAt(String input) throws DukeException {
@@ -42,13 +61,37 @@ public class Event extends Task{
         return event;
     }
 
+    private String getAt() {
+        String value;
+        if (atDate != null && atTime != null) {
+            value = DateTime.getDateString(atDate) + " " + DateTime.getTimeString(atTime);
+        } else if (atDate != null && atTime == null) {
+            value = DateTime.getDateString(atDate);
+        } else {
+            value = at;
+        }
+        return value;
+    }
+
+    private String getAtData() {
+        String value;
+        if (atDate != null && atTime != null) {
+            value = DateTime.getDateData(atDate) + " " + DateTime.getTimeData(atTime);
+        } else if (atDate != null && atTime == null) {
+            value = DateTime.getDateData(atDate);
+        } else {
+            value = at;
+        }
+        return value;
+    }
+
     @Override
     public String toString() {
-        return "[E]" + super.toString() + " (at: " + at + ")";
+        return "[E]" + super.toString() + " (at: " + getAt() + ")";
     }
 
     @Override
     public String getData() {
-        return "E" + SEPARATOR + super.getData() + SEPARATOR + at;
+        return "E" + SEPARATOR + super.getData() + SEPARATOR + getAtData();
     }
 }

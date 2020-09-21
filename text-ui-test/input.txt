@@ -51,6 +51,22 @@ done -1
 done 4.5
 done rrw
 list
+event jaksdfj /at 1/1/1223 1234
+event jaksdfj /at 1/1/1223 0834
+event jaksdfj /at 1/1/1223 834
+event jaksdfj /at 1/1/1223
+event jaksdfj /at 1/1/1223 asdf
+event jaksdfj /at 1/1/1223 12342
+event jaksdfj /at 13/13/1223 1234
+event jaksdfj /at 1/1/13 1234
+deadline jaksdfj /by 1/1/1223 1234
+deadline jaksdfj /by 1/1/1223 0834
+deadline jaksdfj /by 1/1/1223 834
+deadline jaksdfj /by 1/1/1223
+deadline jaksdfj /by 1/1/1223 asdf
+deadline jaksdfj /by 1/1/1223 12342
+deadline jaksdfj /by 13/13/1223 1234
+deadline jaksdfj /by 1/1/13 1234
 todo asdf
 todo asdf
 todo asdf
@@ -61,22 +77,6 @@ todo asdf
 todo asdf
 todo asdf
   todo asdf
-todo asdf
-todo asdf
-todo asdf
-todo asdf
-todo asdf
-todo asdf
-todo asdf
-todo asdf
-todo asdf
-todo asdf
-todo asdf
-todo asdf
-todo asdf
-todo asdf
-todo asdf
-todo asdf
 todo asdf
 todo asdf
 todo asdf
