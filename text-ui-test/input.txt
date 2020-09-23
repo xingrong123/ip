@@ -16,7 +16,7 @@ deadline adsf /byasdf
 deadline asdf/by asdf
 deadlineasdf /by asdf
 deadline asdf /at asdf
-deadline asdf /by asdf
+deadline asddf /by asdf
 deadline asdf dsfgs /by asdf asdf
   list
 done 2
@@ -34,7 +34,7 @@ event asdf /atasdf
 event asdf/at asdf
 eventasdf /at asdf
 event asdf /by asdf
-event asdf /at asdf
+event asddf /at asdf
 event asdf asdf /at asdf asdf
 list
 todo asdf
@@ -74,7 +74,7 @@ todo asdf
 todo asdf
 todo asdf
 todo asdf
-todo asdf
+todo asddf
 todo asdf
 todo asdf
 todo asdf
@@ -97,7 +97,7 @@ todo asdf
 todo asdf
 todo asdf
 todo asdf
-todo asdf
+todo asddf
 todo asdf
 todo asdf
 todo asdf
@@ -147,6 +147,9 @@ delete  1
 delete 123
 delete 100
 delete -12
+find asddf
+find ddf
+find sjdfasfdiab
 date 1/1/1223
 date 13/13/1223
 date 1/1/1225

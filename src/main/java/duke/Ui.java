@@ -59,6 +59,17 @@ public class Ui {
         return message;
     }
 
+    public void showFindKeyword(String message) {
+        showMessageLayout(message);
+    }
+
+//    public void showDeleteTask(Task task, int taskCount) {
+//        System.out.println(LINE
+//                + "\tNoted. I've removed this task:");
+//        System.out.printf("\t  %s\n", task);
+//        System.out.printf("\tNow you have %d tasks in the list." + System.lineSeparator(), taskCount);
+//        System.out.println(LINE);
+
     public void showMarkTaskDone(String message) {
         showMessageLayout(message);
     }
