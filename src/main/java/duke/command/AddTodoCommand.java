@@ -6,7 +6,7 @@ import duke.exception.DukeException;
 import duke.task.TaskList;
 import duke.task.Todo;
 
-public class AddTodoCommand extends Command{
+public class AddTodoCommand extends Command {
 
     private String description;
 

@@ -10,10 +10,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Storage {
-    private static final String TASK_SEPARATOR = "~~";
 
     private String filePath;
 
@@ -21,9 +21,9 @@ public class Storage {
         this.filePath = filePath.replace('/', File.separatorChar);
     }
 
-    public String[] load() throws DukeException {
+    public ArrayList<String> load() throws DukeException {
         File f = new File(filePath);
-        String[] tasks;
+        ArrayList<String> tasks;
         try {
              tasks = getTasks(f);
         } catch (FileNotFoundException e) {
@@ -32,26 +32,13 @@ public class Storage {
         return tasks;
     }
 
-    private String[] getTasks(File f) throws FileNotFoundException {
-        StringBuilder data = new StringBuilder();
-        int taskCount;
-        taskCount = readTasksAndGetTaskCount(data, f);
-        String[] tasks = data.toString().split(TASK_SEPARATOR, taskCount);
-        return tasks;
-    }
-
-    private int readTasksAndGetTaskCount(StringBuilder data, File f) throws FileNotFoundException {
+    private ArrayList<String> getTasks(File f) throws FileNotFoundException {
+        ArrayList<String> tasks = new ArrayList<>();
         Scanner s = new Scanner(f);
-        int taskCount = 0;
         while (s.hasNextLine()) {
-            String line = s.nextLine();
-            data.append(line);
-            taskCount++;
-            if (s.hasNextLine()) {
-                data.append(TASK_SEPARATOR);
-            }
+            tasks.add(s.nextLine());
         }
-        return taskCount;
+        return tasks;
     }
 
 

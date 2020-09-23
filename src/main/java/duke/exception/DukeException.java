@@ -2,7 +2,7 @@ package duke.exception;
 
 import duke.task.TaskType;
 
-public class DukeException extends Exception{
+public class DukeException extends Exception {
     private TaskType taskType = null;
     private DukeExceptionType dukeExceptionType;
 
