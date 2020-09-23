@@ -85,7 +85,7 @@
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [D][✘] asdf (by: asdf)
+	  [D][✘] asddf (by: asdf)
 	Now you have 3 tasks in the list.
 	____________________________________________________________
 
@@ -99,7 +99,7 @@
 	Here are the tasks in your list:
 	1.[T][✘] asdf
 	2.[T][✘] adf asdf asdf
-	3.[D][✘] asdf (by: asdf)
+	3.[D][✘] asddf (by: asdf)
 	4.[D][✘] asdf dsfgs (by: asdf asdf)
 	____________________________________________________________
 
@@ -112,7 +112,7 @@
 	Here are the tasks in your list:
 	1.[T][✘] asdf
 	2.[T][✓] adf asdf asdf
-	3.[D][✘] asdf (by: asdf)
+	3.[D][✘] asddf (by: asdf)
 	4.[D][✘] asdf dsfgs (by: asdf asdf)
 	____________________________________________________________
 
@@ -170,7 +170,7 @@
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [E][✘] asdf (at: asdf)
+	  [E][✘] asddf (at: asdf)
 	Now you have 5 tasks in the list.
 	____________________________________________________________
 
@@ -184,9 +184,9 @@
 	Here are the tasks in your list:
 	1.[T][✘] asdf
 	2.[T][✓] adf asdf asdf
-	3.[D][✘] asdf (by: asdf)
+	3.[D][✘] asddf (by: asdf)
 	4.[D][✘] asdf dsfgs (by: asdf asdf)
-	5.[E][✘] asdf (at: asdf)
+	5.[E][✘] asddf (at: asdf)
 	6.[E][✘] asdf asdf (at: asdf asdf)
 	____________________________________________________________
 
@@ -206,9 +206,9 @@
 	Here are the tasks in your list:
 	1.[T][✘] asdf
 	2.[T][✓] adf asdf asdf
-	3.[D][✘] asdf (by: asdf)
+	3.[D][✘] asddf (by: asdf)
 	4.[D][✘] asdf dsfgs (by: asdf asdf)
-	5.[E][✘] asdf (at: asdf)
+	5.[E][✘] asddf (at: asdf)
 	6.[E][✘] asdf asdf (at: asdf asdf)
 	7.[T][✘] asdf
 	8.[T][✘] asdf
@@ -248,7 +248,7 @@
 
 	____________________________________________________________
 	Nice! I've marked this task as done:
-	  [✓] asdf
+	  [✓] asddf
 	____________________________________________________________
 
 	____________________________________________________________
@@ -267,9 +267,9 @@
 	Here are the tasks in your list:
 	1.[T][✘] asdf
 	2.[T][✓] adf asdf asdf
-	3.[D][✘] asdf (by: asdf)
+	3.[D][✘] asddf (by: asdf)
 	4.[D][✘] asdf dsfgs (by: asdf asdf)
-	5.[E][✓] asdf (at: asdf)
+	5.[E][✓] asddf (at: asdf)
 	6.[E][✘] asdf asdf (at: asdf asdf)
 	7.[T][✘] asdf
 	8.[T][✘] asdf
@@ -311,7 +311,7 @@
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [T][✘] asddf
 	Now you have 18 tasks in the list.
 	____________________________________________________________
 
@@ -449,7 +449,7 @@
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [T][✘] asddf
 	Now you have 41 tasks in the list.
 	____________________________________________________________
 
@@ -815,9 +815,9 @@
 	Here are the tasks in your list:
 	1.[T][✘] asdf
 	2.[T][✓] adf asdf asdf
-	3.[D][✘] asdf (by: asdf)
+	3.[D][✘] asddf (by: asdf)
 	4.[D][✘] asdf dsfgs (by: asdf asdf)
-	5.[E][✓] asdf (at: asdf)
+	5.[E][✓] asddf (at: asdf)
 	6.[E][✘] asdf asdf (at: asdf asdf)
 	7.[T][✘] asdf
 	8.[T][✘] asdf
@@ -830,7 +830,7 @@
 	15.[T][✘] asdf
 	16.[T][✘] asdf
 	17.[T][✘] asdf
-	18.[T][✘] asdf
+	18.[T][✘] asddf
 	19.[T][✘] asdf
 	20.[T][✘] asdf
 	21.[T][✘] asdf
@@ -853,7 +853,7 @@
 	38.[T][✘] asdf
 	39.[T][✘] asdf
 	40.[T][✘] asdf
-	41.[T][✘] asdf
+	41.[T][✘] asddf
 	42.[T][✘] asdf
 	43.[T][✘] asdf
 	44.[T][✘] asdf
@@ -941,6 +941,26 @@
 
 	____________________________________________________________
 	OOPS!!! Please enter valid task number.
+	____________________________________________________________
+
+	____________________________________________________________
+	Here are the matching tasks in your list:
+	1.[D][✘] asddf (by: asdf)
+	2.[E][✓] asddf (at: asdf)
+	3.[T][✘] asddf
+	4.[T][✘] asddf
+	____________________________________________________________
+
+	____________________________________________________________
+	Here are the matching tasks in your list:
+	1.[D][✘] asddf (by: asdf)
+	2.[E][✓] asddf (at: asdf)
+	3.[T][✘] asddf
+	4.[T][✘] asddf
+	____________________________________________________________
+
+	____________________________________________________________
+	Here are the matching tasks in your list:
 	____________________________________________________________
 
 	____________________________________________________________
