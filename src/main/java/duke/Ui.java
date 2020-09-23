@@ -58,6 +58,12 @@ public class Ui {
         System.out.println(LINE);
     }
 
+    public void showFindKeyword(String message) {
+        System.out.println(LINE
+                + message
+                + LINE);
+    }
+
     public void showDeleteTask(Task task, int taskCount) {
         System.out.println(LINE
                 + "\tNoted. I've removed this task:");
