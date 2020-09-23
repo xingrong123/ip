@@ -1,5 +1,8 @@
 package duke.task;
 
+/**
+ * The Task class and its subclasses represents a task containing a description and an indicator of whether it is done.
+ */
 public class Task {
     private static final String TICK = "\u2713";
     private static final String CROSS = "\u2718";
@@ -9,29 +12,52 @@ public class Task {
     protected boolean isDone;
     protected TaskType taskType;
 
-    public Task(String description, TaskType taskType) {
+    protected Task(String description, TaskType taskType) {
         this.description = description;
         this.isDone = false;
         this.taskType = taskType;
     }
 
+    /**
+     * This methods sets the isDone variable of the task object to true.
+     */
     public void markDone() {
         this.isDone = true;
     }
 
+    /**
+     * Returns the corresponding icon depending on isDone.
+     *
+     * @return TICK if isDone is true, else CROSS.
+     */
     public String getStatusIcon() {
         // return tick or X symbols
         return (isDone ? TICK : CROSS);
     }
 
+    /**
+     * Returns the description of the task.
+     *
+     * @return description.
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Returns the full details of the task when saving.
+     *
+     * @return a string containing isDone and the description of the task.
+     */
     public String getData() {
         return (isDone ? 1 : 0) + SEPARATOR + description;
     }
 
+    /**
+     * Returns the details of the task to be saved in the file.
+     *
+     * @return The details of the todo.
+     */
     @Override
     public String toString() {
         return "[" + getStatusIcon() + "] " + description;

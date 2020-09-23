@@ -4,6 +4,9 @@ import duke.command.Command;
 import duke.exception.DukeException;
 import duke.task.TaskList;
 
+/**
+ * The Duke program allows users to store and organize different types of tasks locally in their machines.
+ */
 public class Duke {
 
     private Storage storage;
@@ -21,6 +24,9 @@ public class Duke {
         }
     }
 
+    /**
+     * This method is used run the Duke program.
+     */
     public void run() {
         boolean isExit = false;
 
@@ -39,6 +45,11 @@ public class Duke {
 
     }
 
+    /**
+     * This is the main method which creates a Duke object and runs it.
+     *
+     * @param args Unused.
+     */
     public static void main(String[] args) {
         new Duke("./data/tasks.txt").run();
     }

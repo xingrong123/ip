@@ -7,19 +7,33 @@ import duke.task.TaskType;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Represents the user interface on the command line and deals with interactions with the user.
+ */
 public class Ui {
     private static final String LINE = "\t____________________________________________________________"
             + System.lineSeparator();
     private Scanner scanner;
 
+    /**
+     * Constructs a new Ui instance.
+     */
     public Ui() {
         scanner = new Scanner(System.in);
     }
 
+    /**
+     * Returns a string of the user input in the command line.
+     *
+     * @return the string of user input.
+     */
     public String readCommand() {
         return scanner.nextLine().trim();
     }
 
+    /**
+     * Prints a message after starting the program.
+     */
     public void showWelcomeScreen() {
         System.out.println(LINE
                 + "\tHello! I'm Duke.\n"
@@ -27,12 +41,21 @@ public class Ui {
                 + LINE);
     }
 
+    /**
+     * Prints a message before exiting the program.
+     */
     public void showExitScreen() {
         System.out.println(LINE
                 + "\tBye. Hope to see you again soon!\n"
                 + LINE);
     }
 
+    /**
+     * Prints the details of all the tasks in the list.
+     *
+     * @param tasklist The list of tasks.
+     * @param taskCount The number of tasks in the list.
+     */
     public void showTaskList(ArrayList<Task> tasklist, int taskCount) {
         System.out.print(Ui.LINE
                 + "\tHere are the tasks in your list:\n");
@@ -42,6 +65,12 @@ public class Ui {
         System.out.println(Ui.LINE);
     }
 
+    /**
+     * Prints the message after adding a task.
+     *
+     * @param task The added task.
+     * @param taskCount The number of tasks in the list.
+     */
     public void showAddTask(Task task, int taskCount) {
         String taskCountStr = taskCount + (taskCount == 1 ? " task" : " tasks");
         System.out.println(Ui.LINE
@@ -51,6 +80,11 @@ public class Ui {
                 + Ui.LINE);
     }
 
+    /**
+     * Prints the message after marking a task as done.
+     *
+     * @param task The done task.
+     */
     public void showMarkTaskDone(Task task) {
         System.out.println(LINE
                 + "\tNice! I've marked this task as done:");
@@ -58,6 +92,12 @@ public class Ui {
         System.out.println(LINE);
     }
 
+    /**
+     * Prints the message after deleting a task.
+     *
+     * @param task The deleted task.
+     * @param taskCount The remaining number of tasks in the list.
+     */
     public void showDeleteTask(Task task, int taskCount) {
         System.out.println(LINE
                 + "\tNoted. I've removed this task:");
@@ -66,6 +106,12 @@ public class Ui {
         System.out.println(LINE);
     }
 
+    /**
+     * This methods detects the type of dukeException error and
+     * prints the corresponding error message.
+     *
+     * @param dukeException The dukeException error.
+     */
     public void showErrorMessage(DukeException dukeException) {
         switch (dukeException.getError()) {
         case FULL_TASK_LIST:

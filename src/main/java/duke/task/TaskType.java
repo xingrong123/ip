@@ -1,10 +1,20 @@
 package duke.task;
 
+import duke.exception.DukeException;
+
+/**
+ * Enumeration of the different task types: todo, deadline, event.
+ */
 public enum TaskType {
     TODO,
     DEADLINE,
     EVENT;
 
+    /**
+     * Returns a string of the task type.
+     *
+     * @return the string.
+     */
     @Override
     public String toString() {
         String task = null;
