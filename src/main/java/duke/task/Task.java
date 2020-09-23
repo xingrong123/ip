@@ -1,8 +1,13 @@
 package duke.task;
 
+import duke.exception.DukeException;
+import duke.exception.DukeExceptionType;
+
 public class Task {
     private static final String TICK = "\u2713";
     private static final String CROSS = "\u2718";
+    private static final String DONE = "1";
+    private static final String NOT_DONE = "0";
     protected static final String SEPARATOR = " | ";
 
     protected String description;
@@ -17,6 +22,14 @@ public class Task {
 
     public void markDone() {
         this.isDone = true;
+    }
+
+    protected static void initCheckDone(Task task, String done) throws DukeException {
+        if (done.compareTo(DONE) == 0) {
+            task.markDone();
+        } else if (done.compareTo(NOT_DONE) != 0) {
+            throw new DukeException(DukeExceptionType.INVALID_TASK_DATA);
+        }
     }
 
     public String getStatusIcon() {

@@ -7,10 +7,13 @@ import duke.exception.DukeExceptionType;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
+import java.util.Arrays;
+import java.util.List;
 
-public class Event extends Task{
+public class Event extends Task implements Schedulable {
     private static final String AT_KW = " /at ";
     public static final String EVENT_KW = "event";
+    public static final char CHAR_IDENTIFIER  = 'E';
 
     private String at;
     private LocalDate atDate = null;
@@ -19,12 +22,11 @@ public class Event extends Task{
     public Event(String description, String at) {
         super(description.trim(), TaskType.EVENT);
 
-
         try {
             if (at.contains(" ")) {
-                String[] dateTimeString = at.split(" ", 2);
-                atDate = DateTime.getDate(dateTimeString[0]);
-                atTime = DateTime.getTime(dateTimeString[1]);
+                List<String> dateTimeString = Arrays.asList(at.split(" ", 2));
+                atDate = DateTime.getDate(dateTimeString.get(0));
+                atTime = DateTime.getTime(dateTimeString.get(1));
             } else {
                 atDate = DateTime.getDate(at);
             }
@@ -33,31 +35,28 @@ public class Event extends Task{
         }
     }
 
-    public static String[] getDescAndAt(String input) throws DukeException {
+    public static List<String> getDescAndAt(String input) throws DukeException {
         String descriptionAndAt = input.substring(EVENT_KW.length());
-        String[] string = descriptionAndAt.split(AT_KW);
-        ensureValidEventInput(descriptionAndAt, string);
-        return string;
+        List<String> strings =  Arrays.asList(descriptionAndAt.split(AT_KW));
+        ensureValidEventInput(descriptionAndAt, strings);
+        return strings;
     }
 
-    private static void ensureValidEventInput(String descriptionAndAt, String[] string) throws DukeException {
-        if (string[0].isBlank()) {
+    private static void ensureValidEventInput(String descriptionAndAt, List<String> strings) throws DukeException {
+        if (strings.get(0).isBlank()) {
             throw new DukeException(DukeExceptionType.EMPTY_DESCRIPTION, TaskType.EVENT);
-        } else if (string.length != 2 || string[1].isBlank() || !descriptionAndAt.startsWith(" ")) {
+        } else if (strings.size() != 2 || strings.get(1).isBlank() || !descriptionAndAt.startsWith(" ")) {
             throw new DukeException(DukeExceptionType.INVALID_TASK_FORMAT, TaskType.EVENT);
         }
     }
 
     public static Task initEvent(String data) throws DukeException {
-        String[] details = data.split("\\|");
-        String description = details[2].trim();
-        String at = details[3].trim();
+        List<String> details =  Arrays.asList(data.split("\\|"));
+        String description = details.get(2).trim();
+        String at = details.get(3).trim();
         Task event = new Event(description, at);
-        if (details[1].trim().compareTo("1") == 0) {
-            event.markDone();
-        } else if (details[1].trim().compareTo( "0") != 0) {
-            throw new DukeException(DukeExceptionType.INVALID_TASK_DATA);
-        }
+        String done = details.get(1).trim();
+        initCheckDone(event, done);
         return event;
     }
 
@@ -83,6 +82,26 @@ public class Event extends Task{
             value = at;
         }
         return value;
+    }
+
+    @Override
+    public boolean hasDate() {
+        return atDate != null;
+    }
+
+    @Override
+    public boolean hasTime() {
+        return atTime != null;
+    }
+
+    @Override
+    public LocalDate getDate() {
+        return atDate;
+    }
+
+    @Override
+    public LocalTime getTime() {
+        return atTime;
     }
 
     @Override
