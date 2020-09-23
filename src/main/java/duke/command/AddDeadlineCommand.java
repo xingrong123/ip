@@ -6,15 +6,19 @@ import duke.exception.DukeException;
 import duke.task.Deadline;
 import duke.task.TaskList;
 
-public class AddDeadlineCommand extends Command{
+import java.util.List;
+
+import static java.lang.System.lineSeparator;
+
+public class AddDeadlineCommand extends Command {
 
     private String description;
     private String by;
 
     public AddDeadlineCommand(String command) throws DukeException {
-        String[] descAndAt = Deadline.getDescAndBy(command);
-        description = descAndAt[0];
-        by = descAndAt[1];
+        List<String> descAndAt = Deadline.getDescAndBy(command);
+        description = descAndAt.get(0);
+        by = descAndAt.get(1);
     }
     @Override
     public void execute(TaskList taskList, Ui ui, Storage storage) throws DukeException {
@@ -23,4 +27,6 @@ public class AddDeadlineCommand extends Command{
         ui.showAddTask(deadline, taskList.getSize());
         storage.save(taskList.getData());
     }
+
+
 }

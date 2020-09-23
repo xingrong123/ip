@@ -7,7 +7,7 @@ import duke.exception.DukeExceptionType;
 import duke.task.Task;
 import duke.task.TaskList;
 
-public class DoneCommand extends Command{
+public class DoneCommand extends Command {
     public static final String DONE_KW = "done";
     private int index;
 
@@ -29,10 +29,16 @@ public class DoneCommand extends Command{
         try {
             Task task = taskList.getTask(index);
             taskList.markTaskDone(index);
-            ui.showMarkTaskDone(task);
+            ui.showMarkTaskDone(getMessage(task));
             storage.save(taskList.getData());
         } catch (IndexOutOfBoundsException e) {
             throw new DukeException(DukeExceptionType.INVALID_TASK_NUMBER);
         }
+    }
+
+    private String getMessage(Task task) {
+        String message = "\tNice! I've marked this task as done:\n"
+                + "\t  [" + task.getStatusIcon() + "] " + task.getDescription() + "\n";
+        return message;
     }
 }

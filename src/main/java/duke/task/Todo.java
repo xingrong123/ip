@@ -3,8 +3,12 @@ package duke.task;
 import duke.exception.DukeException;
 import duke.exception.DukeExceptionType;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Todo extends Task{
     public static final String TODO_KW = "todo";
+    public static final char CHAR_IDENTIFIER  = 'T';
 
     public Todo(String description) {
         super(description, TaskType.TODO);
@@ -25,14 +29,11 @@ public class Todo extends Task{
     }
 
     public static Task initTodo(String data) throws DukeException {
-        String[] details = data.split("\\|");
-        String description = details[2].trim();
+        List<String> details = Arrays.asList(data.split("\\|"));
+        String description = details.get(2).trim();
         Task todo = new Todo(description);
-        if (details[1].trim().compareTo("1") == 0) {
-            todo.markDone();
-        } else if (details[1].trim().compareTo( "0") != 0) {
-            throw new DukeException(DukeExceptionType.INVALID_TASK_DATA);
-        }
+        String done = details.get(1).trim();
+        initCheckDone(todo, done);
         return todo;
     }
 

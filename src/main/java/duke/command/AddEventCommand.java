@@ -6,15 +6,18 @@ import duke.exception.DukeException;
 import duke.task.Event;
 import duke.task.TaskList;
 
-public class AddEventCommand extends Command{
+import java.util.ArrayList;
+import java.util.List;
+
+public class AddEventCommand extends Command {
 
     private String description;
     private String at;
 
     public AddEventCommand(String command) throws DukeException {
-        String[] descAndAt = Event.getDescAndAt(command);
-        description = descAndAt[0];
-        at = descAndAt[1];
+        List<String> descAndAt = Event.getDescAndAt(command);
+        description = descAndAt.get(0);
+        at = descAndAt.get(1);
     }
 
 

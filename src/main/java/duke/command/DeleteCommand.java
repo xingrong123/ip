@@ -7,7 +7,7 @@ import duke.exception.DukeExceptionType;
 import duke.task.Task;
 import duke.task.TaskList;
 
-public class DeleteCommand extends Command{
+public class DeleteCommand extends Command {
     public static final String DELETE_KW = "delete";
     private int index;
 
@@ -28,11 +28,18 @@ public class DeleteCommand extends Command{
         try {
             Task task = taskList.getTask(index);
             taskList.deleteTask(task);
-            ui.showDeleteTask(task, taskList.getSize());
+            ui.showDeleteTask(getMessage(task, taskList.getSize()));
             storage.save(taskList.getData());
         } catch (IndexOutOfBoundsException e) {
             throw new DukeException(DukeExceptionType.INVALID_TASK_NUMBER);
         }
 
+    }
+
+    private String getMessage(Task task, int size) {
+        String message = "\tNoted. I've removed this task:\n"
+                + "\t  " + task + "\n"
+                + "\tNow you have " + size + " tasks in the list.\n";
+        return message;
     }
 }
