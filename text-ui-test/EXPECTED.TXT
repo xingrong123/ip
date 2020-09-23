@@ -85,7 +85,7 @@
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [D][✘] asdf (by: asdf)
+	  [D][✘] asddf (by: asdf)
 	Now you have 3 tasks in the list.
 	____________________________________________________________
 
@@ -99,7 +99,7 @@
 	Here are the tasks in your list:
 	1.[T][✘] asdf
 	2.[T][✘] adf asdf asdf
-	3.[D][✘] asdf (by: asdf)
+	3.[D][✘] asddf (by: asdf)
 	4.[D][✘] asdf dsfgs (by: asdf asdf)
 	____________________________________________________________
 
@@ -112,7 +112,7 @@
 	Here are the tasks in your list:
 	1.[T][✘] asdf
 	2.[T][✓] adf asdf asdf
-	3.[D][✘] asdf (by: asdf)
+	3.[D][✘] asddf (by: asdf)
 	4.[D][✘] asdf dsfgs (by: asdf asdf)
 	____________________________________________________________
 
@@ -170,7 +170,7 @@
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [E][✘] asdf (at: asdf)
+	  [E][✘] asddf (at: asdf)
 	Now you have 5 tasks in the list.
 	____________________________________________________________
 
@@ -184,9 +184,9 @@
 	Here are the tasks in your list:
 	1.[T][✘] asdf
 	2.[T][✓] adf asdf asdf
-	3.[D][✘] asdf (by: asdf)
+	3.[D][✘] asddf (by: asdf)
 	4.[D][✘] asdf dsfgs (by: asdf asdf)
-	5.[E][✘] asdf (at: asdf)
+	5.[E][✘] asddf (at: asdf)
 	6.[E][✘] asdf asdf (at: asdf asdf)
 	____________________________________________________________
 
@@ -206,9 +206,9 @@
 	Here are the tasks in your list:
 	1.[T][✘] asdf
 	2.[T][✓] adf asdf asdf
-	3.[D][✘] asdf (by: asdf)
+	3.[D][✘] asddf (by: asdf)
 	4.[D][✘] asdf dsfgs (by: asdf asdf)
-	5.[E][✘] asdf (at: asdf)
+	5.[E][✘] asddf (at: asdf)
 	6.[E][✘] asdf asdf (at: asdf asdf)
 	7.[T][✘] asdf
 	8.[T][✘] asdf
@@ -248,7 +248,7 @@
 
 	____________________________________________________________
 	Nice! I've marked this task as done:
-	  [✓] asdf
+	  [✓] asddf
 	____________________________________________________________
 
 	____________________________________________________________
@@ -267,9 +267,9 @@
 	Here are the tasks in your list:
 	1.[T][✘] asdf
 	2.[T][✓] adf asdf asdf
-	3.[D][✘] asdf (by: asdf)
+	3.[D][✘] asddf (by: asdf)
 	4.[D][✘] asdf dsfgs (by: asdf asdf)
-	5.[E][✓] asdf (at: asdf)
+	5.[E][✓] asddf (at: asdf)
 	6.[E][✘] asdf asdf (at: asdf asdf)
 	7.[T][✘] asdf
 	8.[T][✘] asdf
@@ -281,109 +281,109 @@
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: Jan 01 1223 1234)
 	Now you have 13 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: Jan 01 1223 0834)
 	Now you have 14 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: Jan 01 1223)
 	Now you have 15 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: Jan 01 1223)
 	Now you have 16 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj sdf (at: Dec 12 1223)
 	Now you have 17 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: Jan 01 1223)
 	Now you have 18 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: Jan 01 1223)
 	Now you have 19 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: 13/13/1223 1234)
 	Now you have 20 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [E][✘] jaksdfj (at: 1/1/13 1234)
 	Now you have 21 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: Jan 01 1223 1234)
 	Now you have 22 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: Jan 01 1223 0834)
 	Now you have 23 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: Jan 01 1223)
 	Now you have 24 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: Jan 01 1223)
 	Now you have 25 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj sdf (by: Dec 12 1223)
 	Now you have 26 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: Jan 01 1223)
 	Now you have 27 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: Jan 01 1223)
 	Now you have 28 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: 13/13/1223 1234)
 	Now you have 29 tasks in the list.
 	____________________________________________________________
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [D][✘] jaksdfj (by: 1/1/13 1234)
 	Now you have 30 tasks in the list.
 	____________________________________________________________
 
@@ -419,7 +419,7 @@
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [T][✘] asddf
 	Now you have 36 tasks in the list.
 	____________________________________________________________
 
@@ -557,7 +557,7 @@
 
 	____________________________________________________________
 	Got it. I've added this task:
-	  [T][✘] asdf
+	  [T][✘] asddf
 	Now you have 59 tasks in the list.
 	____________________________________________________________
 
@@ -815,9 +815,9 @@
 	Here are the tasks in your list:
 	1.[T][✘] asdf
 	2.[T][✓] adf asdf asdf
-	3.[D][✘] asdf (by: asdf)
+	3.[D][✘] asddf (by: asdf)
 	4.[D][✘] asdf dsfgs (by: asdf asdf)
-	5.[E][✓] asdf (at: asdf)
+	5.[E][✓] asddf (at: asdf)
 	6.[E][✘] asdf asdf (at: asdf asdf)
 	7.[T][✘] asdf
 	8.[T][✘] asdf
@@ -825,30 +825,30 @@
 	10.[T][✘] adsfasfasf
 	11.[T][✘] adsfasof
 	12.[T][✘] asdfasfa
-	13.[T][✘] asdf
-	14.[T][✘] asdf
-	15.[T][✘] asdf
-	16.[T][✘] asdf
-	17.[T][✘] asdf
-	18.[T][✘] asdf
-	19.[T][✘] asdf
-	20.[T][✘] asdf
-	21.[T][✘] asdf
-	22.[T][✘] asdf
-	23.[T][✘] asdf
-	24.[T][✘] asdf
-	25.[T][✘] asdf
-	26.[T][✘] asdf
-	27.[T][✘] asdf
-	28.[T][✘] asdf
-	29.[T][✘] asdf
-	30.[T][✘] asdf
+	13.[E][✘] jaksdfj (at: Jan 01 1223 1234)
+	14.[E][✘] jaksdfj (at: Jan 01 1223 0834)
+	15.[E][✘] jaksdfj (at: Jan 01 1223)
+	16.[E][✘] jaksdfj (at: Jan 01 1223)
+	17.[E][✘] jaksdfj sdf (at: Dec 12 1223)
+	18.[E][✘] jaksdfj (at: Jan 01 1223)
+	19.[E][✘] jaksdfj (at: Jan 01 1223)
+	20.[E][✘] jaksdfj (at: 13/13/1223 1234)
+	21.[E][✘] jaksdfj (at: 1/1/13 1234)
+	22.[D][✘] jaksdfj (by: Jan 01 1223 1234)
+	23.[D][✘] jaksdfj (by: Jan 01 1223 0834)
+	24.[D][✘] jaksdfj (by: Jan 01 1223)
+	25.[D][✘] jaksdfj (by: Jan 01 1223)
+	26.[D][✘] jaksdfj sdf (by: Dec 12 1223)
+	27.[D][✘] jaksdfj (by: Jan 01 1223)
+	28.[D][✘] jaksdfj (by: Jan 01 1223)
+	29.[D][✘] jaksdfj (by: 13/13/1223 1234)
+	30.[D][✘] jaksdfj (by: 1/1/13 1234)
 	31.[T][✘] asdf
 	32.[T][✘] asdf
 	33.[T][✘] asdf
 	34.[T][✘] asdf
 	35.[T][✘] asdf
-	36.[T][✘] asdf
+	36.[T][✘] asddf
 	37.[T][✘] asdf
 	38.[T][✘] asdf
 	39.[T][✘] asdf
@@ -871,7 +871,7 @@
 	56.[T][✘] asdf
 	57.[T][✘] asdf
 	58.[T][✘] asdf
-	59.[T][✘] asdf
+	59.[T][✘] asddf
 	60.[T][✘] asdf
 	61.[T][✘] asdf
 	62.[T][✘] asdf
@@ -941,6 +941,64 @@
 
 	____________________________________________________________
 	OOPS!!! Please enter valid task number.
+	____________________________________________________________
+
+	____________________________________________________________
+	Here are the matching tasks in your list:
+	1.[D][✘] asddf (by: asdf)
+	2.[E][✓] asddf (at: asdf)
+	3.[T][✘] asddf
+	4.[T][✘] asddf
+	____________________________________________________________
+
+	____________________________________________________________
+	Here are the matching tasks in your list:
+	1.[D][✘] asddf (by: asdf)
+	2.[E][✓] asddf (at: asdf)
+	3.[T][✘] asddf
+	4.[T][✘] asddf
+	____________________________________________________________
+
+	____________________________________________________________
+	Here are the matching tasks in your list:
+	____________________________________________________________
+
+	____________________________________________________________
+	Here are the deadlines/events occurring on Jan 01 1223 in your list:
+	[E][✘] jaksdfj (at: Jan 01 1223 1234)
+	[E][✘] jaksdfj (at: Jan 01 1223 0834)
+	[E][✘] jaksdfj (at: Jan 01 1223)
+	[E][✘] jaksdfj (at: Jan 01 1223)
+	[E][✘] jaksdfj (at: Jan 01 1223)
+	[E][✘] jaksdfj (at: Jan 01 1223)
+	[D][✘] jaksdfj (by: Jan 01 1223 1234)
+	[D][✘] jaksdfj (by: Jan 01 1223 0834)
+	[D][✘] jaksdfj (by: Jan 01 1223)
+	[D][✘] jaksdfj (by: Jan 01 1223)
+	[D][✘] jaksdfj (by: Jan 01 1223)
+	[D][✘] jaksdfj (by: Jan 01 1223)
+	____________________________________________________________
+
+	____________________________________________________________
+	OOPS!!! Invalid date or time used.
+	____________________________________________________________
+
+	____________________________________________________________
+	Here are the deadlines/events occurring on Jan 01 1225 in your list:
+	____________________________________________________________
+
+	____________________________________________________________
+	Here are the deadlines/events occurring on Jan 01 1223 1234 in your list:
+	[E][✘] jaksdfj (at: Jan 01 1223 1234)
+	[D][✘] jaksdfj (by: Jan 01 1223 1234)
+	____________________________________________________________
+
+	____________________________________________________________
+	Here are the deadlines/events occurring on Jan 01 1223 1334 in your list:
+	____________________________________________________________
+
+	____________________________________________________________
+	OOPS!!! Invalid date or time used.
 	____________________________________________________________
 
 	____________________________________________________________

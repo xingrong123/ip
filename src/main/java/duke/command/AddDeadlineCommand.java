@@ -6,10 +6,12 @@ import duke.exception.DukeException;
 import duke.task.Deadline;
 import duke.task.TaskList;
 
+import java.util.List;
+
 /**
  * Represents the user command to add a deadline task
  */
-public class AddDeadlineCommand extends Command{
+public class AddDeadlineCommand extends Command {
 
     private String description;
     private String by;
@@ -21,9 +23,9 @@ public class AddDeadlineCommand extends Command{
      * @throws DukeException if the description is empty or the input format is invalid.
      */
     public AddDeadlineCommand(String command) throws DukeException {
-        String[] descAndAt = Deadline.getDescAndBy(command);
-        description = descAndAt[0];
-        by = descAndAt[1];
+        List<String> descAndAt = Deadline.getDescAndBy(command);
+        description = descAndAt.get(0);
+        by = descAndAt.get(1);
     }
 
     /**
@@ -42,4 +44,6 @@ public class AddDeadlineCommand extends Command{
         ui.showAddTask(deadline, taskList.getSize());
         storage.save(taskList.getData());
     }
+
+
 }

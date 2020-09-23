@@ -3,11 +3,15 @@ package duke.task;
 import duke.exception.DukeException;
 import duke.exception.DukeExceptionType;
 
-/**
- * The Todo class represents a type of task which contains a description.
- */
-public class Todo extends Task {
+import java.util.Arrays;
+import java.util.List;
+
+    /**
+     * The Todo class represents a type of task which contains a description.
+     */
+public class Todo extends Task{
     public static final String TODO_KW = "todo";
+    public static final char CHAR_IDENTIFIER  = 'T';
 
     /**
      * Constructs a new Todo instance by storing the given description.
@@ -46,14 +50,11 @@ public class Todo extends Task {
      * @throws DukeException if the task data is invalid.
      */
     public static Task initTodo(String data) throws DukeException {
-        String[] details = data.split("\\|");
-        String description = details[2].trim();
+        List<String> details = Arrays.asList(data.split("\\|"));
+        String description = details.get(2).trim();
         Task todo = new Todo(description);
-        if (details[1].trim().compareTo("1") == 0) {
-            todo.markDone();
-        } else if (details[1].trim().compareTo("0") != 0) {
-            throw new DukeException(DukeExceptionType.INVALID_TASK_DATA);
-        }
+        String done = details.get(1).trim();
+        initCheckDone(todo, done);
         return todo;
     }
 

@@ -4,9 +4,11 @@ import duke.command.AddDeadlineCommand;
 import duke.command.AddEventCommand;
 import duke.command.AddTodoCommand;
 import duke.command.Command;
+import duke.command.DateCommand;
 import duke.command.DeleteCommand;
 import duke.command.DoneCommand;
 import duke.command.ExitCommand;
+import duke.command.FindCommand;
 import duke.command.ListCommand;
 import duke.exception.DukeException;
 import duke.exception.DukeExceptionType;
@@ -42,6 +44,10 @@ public class Parser {
             command = new DoneCommand(input);
         } else if (input.startsWith(DeleteCommand.DELETE_KW)) {
             command = new DeleteCommand(input);
+        } else if (input.startsWith(FindCommand.FIND_KW)) {
+            command = new FindCommand(input);
+        } else if (input.startsWith(DateCommand.DATE_KW)) {
+            command = new DateCommand(input);
         } else if (input.startsWith(Todo.TODO_KW)) {
             command = new AddTodoCommand(input);
         } else if (input.startsWith(Deadline.DEADLINE_KW)) {

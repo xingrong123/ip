@@ -25,7 +25,7 @@ public class TaskList {
      *
      * @param tasks The tasks read from the file.
      */
-    public TaskList(String[] tasks) {
+    public TaskList(ArrayList<String> tasks) {
         taskList = new ArrayList<>();
         loadTaskList(tasks);
     }
@@ -43,7 +43,7 @@ public class TaskList {
         taskList.add(task);
     }
 
-    private void loadTaskList(String[] tasks) {
+    private void loadTaskList(ArrayList<String> tasks) {
         for (String task : tasks) {
             loadTask(task);
         }
@@ -52,17 +52,14 @@ public class TaskList {
     private void loadTask(String task) {
         try {
             switch (task.charAt(0)) {
-            case 'T':
+            case Todo.CHAR_IDENTIFIER:
                 taskList.add(Todo.initTodo(task));
                 break;
-            case 'D':
+            case Deadline.CHAR_IDENTIFIER:
                 taskList.add(Deadline.initDeadline(task));
                 break;
-            case 'E':
+            case Event.CHAR_IDENTIFIER:
                 taskList.add(Event.initEvent(task));
-                break;
-            default:
-                System.out.println("unidentified task");
                 break;
             }
         } catch (IndexOutOfBoundsException | DukeException e) {

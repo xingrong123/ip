@@ -6,10 +6,12 @@ import duke.exception.DukeException;
 import duke.task.Event;
 import duke.task.TaskList;
 
+import java.util.List;
+
 /**
  * Represents the user command to add an event task
  */
-public class AddEventCommand extends Command{
+public class AddEventCommand extends Command {
 
     private String description;
     private String at;
@@ -21,9 +23,9 @@ public class AddEventCommand extends Command{
      * @throws DukeException if the description is empty or the input format is invalid.
      */
     public AddEventCommand(String command) throws DukeException {
-        String[] descAndAt = Event.getDescAndAt(command);
-        description = descAndAt[0];
-        at = descAndAt[1];
+        List<String> descAndAt = Event.getDescAndAt(command);
+        description = descAndAt.get(0);
+        at = descAndAt.get(1);
     }
 
     /**

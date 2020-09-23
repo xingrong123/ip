@@ -48,10 +48,16 @@ public class DoneCommand extends Command{
         try {
             Task task = taskList.getTask(index);
             taskList.markTaskDone(index);
-            ui.showMarkTaskDone(task);
+            ui.showMarkTaskDone(getMessage(task));
             storage.save(taskList.getData());
         } catch (IndexOutOfBoundsException e) {
             throw new DukeException(DukeExceptionType.INVALID_TASK_NUMBER);
         }
+    }
+
+    private String getMessage(Task task) {
+        String message = "\tNice! I've marked this task as done:\n"
+                + "\t  [" + task.getStatusIcon() + "] " + task.getDescription() + "\n";
+        return message;
     }
 }
