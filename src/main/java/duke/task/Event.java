@@ -10,6 +10,9 @@ import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * A type of task represents an event.
+ */
 public class Event extends Task implements Schedulable {
     private static final String AT_KW = " /at ";
     public static final String EVENT_KW = "event";
@@ -19,6 +22,12 @@ public class Event extends Task implements Schedulable {
     private LocalDate atDate = null;
     private LocalTime atTime = null;
 
+    /**
+     * Constructs a new Event instance by storing the given description and at.
+     *
+     * @param description The description of the event.
+     * @param at The date and/or time of the event.
+     */
     public Event(String description, String at) {
         super(description.trim(), TaskType.EVENT);
 
@@ -35,6 +44,13 @@ public class Event extends Task implements Schedulable {
         }
     }
 
+
+    /**
+     * Returns the description and at of the detected event command of the user input.
+     *
+     * @param input The user input.
+     * @throws DukeException if the description is empty or the input format is invalid.
+     */
     public static List<String> getDescAndAt(String input) throws DukeException {
         String descriptionAndAt = input.substring(EVENT_KW.length());
         List<String> strings =  Arrays.asList(descriptionAndAt.split(AT_KW));
@@ -50,6 +66,13 @@ public class Event extends Task implements Schedulable {
         }
     }
 
+    /**
+     * Creates and returns an event from the data read from the file.
+     *
+     * @param data The user input.
+     * @return The event created.
+     * @throws DukeException if the task data is invalid.
+     */
     public static Task initEvent(String data) throws DukeException {
         List<String> details =  Arrays.asList(data.split("\\|"));
         String description = details.get(2).trim();
@@ -104,11 +127,21 @@ public class Event extends Task implements Schedulable {
         return atTime;
     }
 
+    /**
+     * Returns a string of the details of the event to be printed for the Ui.
+     *
+     * @return The details of the event.
+     */
     @Override
     public String toString() {
         return "[E]" + super.toString() + " (at: " + getAt() + ")";
     }
 
+    /**
+     * Returns the details of the event to be saved in the file.
+     *
+     * @return The details of the event.
+     */
     @Override
     public String getData() {
         return "E" + SEPARATOR + super.getData() + SEPARATOR + getAtData();

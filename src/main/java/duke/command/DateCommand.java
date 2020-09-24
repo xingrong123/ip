@@ -13,35 +13,53 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
+/**
+ * Represents the user command to search for tasks with specific date and/or time.
+ */
 public class DateCommand extends Command {
     public static final String DATE_KW = "date";
 
     private LocalDate date;
     private LocalTime time;
 
+    /**
+     * Constructs a new DateCommand instance by detecting and storing the date and/or time from the user input.
+     *
+     * @param command The user input command.
+     * @throws DukeException if the format of the command is invalid or the date and/or time is invalid.
+     */
     public DateCommand(String command) throws DukeException {
         String details = command.substring(DATE_KW.length());
         if (!details.startsWith(" ")) {
             throw new DukeException(DukeExceptionType.UNKNOWN_INPUT);
         }
         try {
-            setDateTime(details);
+            setDateTime(details.trim());
         } catch (DateTimeParseException e) {
             throw new DukeException(DukeExceptionType.INVALID_DATE_TIME);
         }
     }
 
     private void setDateTime(String details) {
-        if (details.trim().contains(" ")) {
-            String[] dateTimeString = details.trim().split(" ", 2);
-            date = DateTime.getDate(dateTimeString[0]);
-            time = DateTime.getTime(dateTimeString[1]);
+        if (details.contains(" ")) {
+            List<String> dateTimeString = Arrays.asList(details.split(" ", 2));
+            date = DateTime.getDate(dateTimeString.get(0));
+            time = DateTime.getTime(dateTimeString.get(1));
         } else {
             date = DateTime.getDate(details.trim());
         }
     }
 
+    /**
+     * Prints all the details of the tasks with matching date and/or time.
+     *
+     * @param taskList The list of tasks.
+     * @param ui The user interface.
+     * @param storage The storage for saving and loading.
+     */
     @Override
     public void execute(TaskList taskList, Ui ui, Storage storage) {
         String dateString = getDate();

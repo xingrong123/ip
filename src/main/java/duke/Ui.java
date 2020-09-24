@@ -6,17 +6,25 @@ import duke.task.TaskType;
 
 import java.util.Scanner;
 
-import static java.lang.System.lineSeparator;
-
+/**
+ * Represents the user interface on the command line and deals with interactions with the user.
+ */
 public class Ui {
-    private static final String LINE = "\t____________________________________________________________"
-            + lineSeparator();
+    private static final String LINE = "\t____________________________________________________________\n";
     private Scanner scanner;
 
+    /**
+     * Constructs a new Ui instance.
+     */
     public Ui() {
         scanner = new Scanner(System.in);
     }
 
+    /**
+     * Returns a string of the user input in the command line.
+     *
+     * @return the string of user input.
+     */
     public String readCommand() {
         return scanner.nextLine().trim();
     }
@@ -27,25 +35,47 @@ public class Ui {
                 + LINE);
     }
 
+    /**
+     * Prints a message after starting the program.
+     */
     public void showWelcomeScreen() {
         String message = "\tHello! I'm Duke.\n"
                 + "\tWhat can I do for you?\n";
         showMessageLayout(message);
     }
 
+    /**
+     * Prints a message before exiting the program.
+     */
     public void showExitScreen() {
         String message = "\tBye. Hope to see you again soon!\n";
         showMessageLayout(message);
     }
 
+    /**
+     * Prints the details of all the tasks in the list.
+     *
+     * @param message The string to be printed.
+     */
     public void showTaskList(String message) {
         showMessageLayout(message);
     }
 
+    /**
+     * Prints the details of all the tasks which has a matching date and/or time.
+     *
+     * @param message The string to be printed.
+     */
     public void showTaskDate(String message) {
         showMessageLayout(message);
     }
 
+    /**
+     * Prints the message after adding a task.
+     *
+     * @param task The added task.
+     * @param taskCount The number of tasks in the list.
+     */
     public void showAddTask(Task task, int taskCount) {
         String message = getAddTaskMessage(task, taskCount);
         showMessageLayout(message);
@@ -53,31 +83,52 @@ public class Ui {
 
     private String getAddTaskMessage(Task task, int size) {
         String taskCount = size + (size == 1 ? " task" : " tasks");
-        String message = "\tGot it. I've added this task:" + lineSeparator()
-                + "\t  " + task + "\n"
+        String message = "\tGot it. I've added this task:\n"
+                + "\t  " + task.toString() + "\n"
                 + "\tNow you have " + taskCount + " in the list.\n";
         return message;
     }
 
+    /**
+     * Prints the details of all the tasks which description contains the keyword(s).
+     *
+     * @param message The string to be printed.
+     */
     public void showFindKeyword(String message) {
         showMessageLayout(message);
     }
 
-//    public void showDeleteTask(Task task, int taskCount) {
-//        System.out.println(LINE
-//                + "\tNoted. I've removed this task:");
-//        System.out.printf("\t  %s\n", task);
-//        System.out.printf("\tNow you have %d tasks in the list." + System.lineSeparator(), taskCount);
-//        System.out.println(LINE);
-
+    /**
+     * Prints the message after marking a task as done.
+     *
+     * @param message The string to be printed.
+     */
     public void showMarkTaskDone(String message) {
         showMessageLayout(message);
     }
 
+    /**
+     * Prints the message after deleting a task.
+     *
+     * @param message The string to be printed.
+     */
     public void showDeleteTask(String message) {
         showMessageLayout(message);
     }
 
+    /**
+     * Prints the error message if data file is not found.
+     */
+    public void showLoadingError() {
+        String message = "\tOOPS!!! Data file not found\n";
+        showMessageLayout(message);
+    }
+
+    /**
+     * This method detects the type of dukeException error and prints the corresponding error message.
+     *
+     * @param dukeException The dukeException error.
+     */
     public void showErrorMessage(DukeException dukeException) {
         switch (dukeException.getError()) {
         case FULL_TASK_LIST:
@@ -102,11 +153,6 @@ public class Ui {
             printInvalidDateTime();
             break;
         }
-    }
-
-    public void showLoadingError() {
-        String message = "\tOOPS!!! Data file not found\n";
-        showMessageLayout(message);
     }
 
     private void printUnknownInputMessage() {
