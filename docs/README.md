@@ -2,15 +2,15 @@
 ## User guide
 ### Table of contents
 * [QuickStart](#quickstart)
-* [Features](#-features)
+* [Features](#features)
   * [Adding a todo task](#adding-a-todo-task-todo)
   * [Adding a deadline task](#adding-a-deadline-task-deadline)
   * [Adding an event task](#adding-an-event-task-event)
   * [Listing all tasks in the task list](#listing-all-tasks-in-the-task-list-list)
   * [Marking a task as done](#marking-a-task-as-done-done)
   * [Removing a task from the list](#removing-a-task-from-the-list-delete)
-  * [Finding tasks with matching keyword(s)](#listing-tasks-with-matching-keywords-find)
-  * [Finding tasks with matching date / date and time](#listing-tasks-with-matching-date-or-date-and-time-date)
+  * [Finding tasks with matching keyword(s)](#finding-tasks-with-matching-keywords-find)
+  * [Finding tasks with matching date / date and time](#finding-tasks-with-matching-date--date-and-time-date)
   * [Exiting the program](#exiting-the-program-bye)
   * [Saving the data](#saving-the-data)
   * [Loading the data](#loading-the-data)
@@ -133,14 +133,14 @@ There is no need to load manually.
         Start the application and all the data should be loaded.
 
 ### Command summary
-|**Action** | **Format, Examples**|
-|------------ | -------------|
-|**todo**|`todo DESCRIPTION`|
-|**deadline**|`deadline DESCRIPTION /by {DATE/DATE TIME/DESCRIPTION_OF_DATETIME}`|
-|**event**|`event DESCRIPTION /at {DATE/DATE TIME/DESCRIPTION_OF_DATETIME}`|
-|**list**|`list`|
-|**done**|`done TASK_NUMBER`|
-|**delete**|`delete TASK_NUMBER`|
-|**find**|`find KEYWORD`|
-|**date**|`date {DATE/DATE TIME}`|
-|**exit**|`bye`|
+**Action** | **Format, Examples**
+------------ | -------------
+**todo**|`todo DESCRIPTION`
+**deadline**|`deadline DESCRIPTION /by {DATE/DATE TIME/DESCRIPTION_OF_DATETIME}`
+**event**|`event DESCRIPTION /at {DATE/DATE TIME/DESCRIPTION_OF_DATETIME}`
+**list**|`list`
+**done**|`done TASK_NUMBER`
+**delete**|`delete TASK_NUMBER`
+**find**|`find KEYWORD`
+**date**|`date {DATE/DATE TIME}`
+**exit**|`bye`
