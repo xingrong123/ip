@@ -1,7 +1,5 @@
 package duke.task;
 
-import duke.exception.DukeException;
-
 /**
  * Enumeration of the different task types: todo, deadline, event.
  */

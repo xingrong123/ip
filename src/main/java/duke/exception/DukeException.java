@@ -3,7 +3,8 @@ package duke.exception;
 import duke.task.TaskType;
 
 /**
- * The class DukeException is a subclass of Exception. It is thrown when
+ * The class DukeException is a subclass of Exception.
+ * It is thrown when an error specific to Duke occurs.
  */
 public class DukeException extends Exception{
     private TaskType taskType = null;

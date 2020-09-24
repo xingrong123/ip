@@ -11,7 +11,7 @@ public class ExitCommand extends Command{
     public static final String BYE_KW = "bye";
 
     /**
-     * Constructs a new ListCommand instance and sets isExitCommand to true.
+     * Constructs a new ExitCommand instance and sets isExitCommand to true.
      */
     public ExitCommand() {
         isExitCommand = true;

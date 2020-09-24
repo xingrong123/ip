@@ -17,6 +17,9 @@ public class Task {
     protected boolean isDone;
     protected TaskType taskType;
 
+    /**
+     * Used by subclasses to set description, done state and tasktype.
+     */
     protected Task(String description, TaskType taskType) {
         this.description = description;
         this.isDone = false;
@@ -24,12 +27,17 @@ public class Task {
     }
 
     /**
-     * This methods sets the isDone variable of the task object to true.
+     * This method sets the isDone variable of the task object to true.
      */
     public void markDone() {
         this.isDone = true;
     }
 
+    /**
+     * This method sets the isDone variable of the task object to true if it is done.
+     *
+     * @throws DukeException if data of done state is invalid.
+     */
     protected static void initCheckDone(Task task, String done) throws DukeException {
         if (done.compareTo(DONE) == 0) {
             task.markDone();
@@ -67,7 +75,7 @@ public class Task {
     }
 
     /**
-     * Returns the details of the task to be saved in the file.
+     * Returns the details of the task to be printed in the command line.
      *
      * @return The details of the todo.
      */

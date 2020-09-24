@@ -10,9 +10,9 @@ import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 import java.util.List;
 
-    /**
-     * A type of task that contains a deadline.
-     */
+/**
+ * A type of task that contains a deadline.
+ */
 public class Deadline extends Task implements Schedulable {
     private static final String BY_KW = " /by ";
     public static final String DEADLINE_KW = "deadline";

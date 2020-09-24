@@ -31,7 +31,7 @@ public class TaskList {
     }
 
     /**
-     * This methods adds a task to the list
+     * This method adds a task to the list
      *
      * @param task The task to be added to the list.
      * @throws DukeException when list reaches MAX_SIZE.
@@ -68,7 +68,7 @@ public class TaskList {
     }
 
     /**
-     * This methods marks a task in the list as done.
+     * This method marks a task in the list as done.
      *
      * @param index The index of the task in the list to be marked as done.
      */

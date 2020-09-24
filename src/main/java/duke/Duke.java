@@ -13,6 +13,12 @@ public class Duke {
     private TaskList tasks;
     private Ui ui;
 
+    /**
+     * Constructs a new Duke instance.
+     * Pass the filepath of the txt file to set up storage.
+     *
+     * @param filePath The filepath of the txt file.
+     */
     public Duke(String filePath) {
         ui = new Ui();
         storage = new Storage(filePath);

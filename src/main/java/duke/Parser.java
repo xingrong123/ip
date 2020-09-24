@@ -17,7 +17,7 @@ import duke.task.Event;
 import duke.task.Todo;
 
 /**
- * Deals with making sense of the user command.
+ * This class deals with making sense of the user command.
  */
 public class Parser {
 

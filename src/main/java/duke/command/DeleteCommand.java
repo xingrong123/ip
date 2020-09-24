@@ -34,7 +34,7 @@ public class DeleteCommand extends Command{
     }
 
     /**
-     * This methods gets the task with the corresponding index from the list, then deletes it.
+     * This method gets the task with the corresponding index from the list, then deletes it.
      * Then it prints out a message and saves the list into the file.
      *
      * @param taskList The list of tasks.

@@ -6,14 +6,11 @@ import duke.task.TaskType;
 
 import java.util.Scanner;
 
-import static java.lang.System.lineSeparator;
-
 /**
  * Represents the user interface on the command line and deals with interactions with the user.
  */
 public class Ui {
-    private static final String LINE = "\t____________________________________________________________"
-            + lineSeparator();
+    private static final String LINE = "\t____________________________________________________________\n";
     private Scanner scanner;
 
     /**
@@ -64,6 +61,11 @@ public class Ui {
         showMessageLayout(message);
     }
 
+    /**
+     * Prints the details of all the tasks which has a matching date and/or time.
+     *
+     * @param message The string to be printed.
+     */
     public void showTaskDate(String message) {
         showMessageLayout(message);
     }
@@ -81,12 +83,17 @@ public class Ui {
 
     private String getAddTaskMessage(Task task, int size) {
         String taskCount = size + (size == 1 ? " task" : " tasks");
-        String message = "\tGot it. I've added this task:" + lineSeparator()
-                + "\t  " + task + "\n"
+        String message = "\tGot it. I've added this task:\n"
+                + "\t  " + task.toString() + "\n"
                 + "\tNow you have " + taskCount + " in the list.\n";
         return message;
     }
 
+    /**
+     * Prints the details of all the tasks which description contains the keyword(s).
+     *
+     * @param message The string to be printed.
+     */
     public void showFindKeyword(String message) {
         showMessageLayout(message);
     }
@@ -110,8 +117,15 @@ public class Ui {
     }
 
     /**
-     * This methods detects the type of dukeException error and
-     * prints the corresponding error message.
+     * Prints the error message if data file is not found.
+     */
+    public void showLoadingError() {
+        String message = "\tOOPS!!! Data file not found\n";
+        showMessageLayout(message);
+    }
+
+    /**
+     * This method detects the type of dukeException error and prints the corresponding error message.
      *
      * @param dukeException The dukeException error.
      */
@@ -139,11 +153,6 @@ public class Ui {
             printInvalidDateTime();
             break;
         }
-    }
-
-    public void showLoadingError() {
-        String message = "\tOOPS!!! Data file not found\n";
-        showMessageLayout(message);
     }
 
     private void printUnknownInputMessage() {

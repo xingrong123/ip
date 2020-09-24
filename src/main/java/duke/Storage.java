@@ -57,10 +57,10 @@ public class Storage {
     }
 
     /**
-     * This methods creates the file if it does not exist and saves
+     * This method creates the file if it does not exist and saves
      * tasks data in the file.
      *
-     * @param data The String of all the data to be saved in the file
+     * @param data The string of all the data to be saved in the file
      * @throws DukeException If there is an error writing to the file.
      */
     public void save(String data) throws DukeException {

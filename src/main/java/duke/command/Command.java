@@ -12,6 +12,9 @@ public abstract class Command {
 
     protected boolean isExitCommand = false;
 
+    /**
+     * Execution of command depends on which command subclass the command belongs to.
+     */
     public abstract void execute(TaskList taskList, Ui ui, Storage storage) throws DukeException;
 
     /**
