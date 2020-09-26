@@ -135,12 +135,12 @@ There is no need to load manually.
 ### Command summary
 **Action** | **Format, Examples**
 ------------ | -------------
-**todo**|`todo DESCRIPTION`
-**deadline**|`deadline DESCRIPTION /by {DATE/DATE TIME/DESCRIPTION_OF_DATETIME}`
-**event**|`event DESCRIPTION /at {DATE/DATE TIME/DESCRIPTION_OF_DATETIME}`
+**todo**|`todo DESCRIPTION` <br> e.g., `todo math homework`
+**deadline**|`deadline DESCRIPTION /by {DATE/DATE TIME/DESCRIPTION_OF_DATETIME}` <br> e.g., `deadline assignment /by 20/3/2020`
+**event**|`event DESCRIPTION /at {DATE/DATE TIME/DESCRIPTION_OF_DATETIME}` <br> e.g., `event class /at 20/3/2020 0900`
 **list**|`list`
-**done**|`done TASK_NUMBER`
-**delete**|`delete TASK_NUMBER`
-**find**|`find KEYWORD`
-**date**|`date {DATE/DATE TIME}`
+**done**|`done TASK_NUMBER` <br> e.g., `done 3`
+**delete**|`delete TASK_NUMBER` <br> e.g., `delete 12`
+**find**|`find KEYWORD` <br> e.g., `find math`
+**date**|`date {DATE/DATE TIME}` <br> e.g., `date 20/3/2020`
 **exit**|`bye`
