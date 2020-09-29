@@ -3,15 +3,15 @@
 ### Table of contents
 * [QuickStart](#quickstart)
 * [Features](#features)
-  * [Adding a todo task](#adding-a-todo-task-todo)
-  * [Adding a deadline task](#adding-a-deadline-task-deadline)
-  * [Adding an event task](#adding-an-event-task-event)
-  * [Listing all tasks in the task list](#listing-all-tasks-in-the-task-list-list)
-  * [Marking a task as done](#marking-a-task-as-done-done)
-  * [Removing a task from the list](#removing-a-task-from-the-list-delete)
-  * [Finding tasks with matching keyword(s)](#finding-tasks-with-matching-keywords-find)
-  * [Finding tasks with matching date / date and time](#finding-tasks-with-matching-date--date-and-time-date)
-  * [Exiting the program](#exiting-the-program-bye)
+  * [Adding a todo task](#todo)
+  * [Adding a deadline task](#deadline)
+  * [Adding an event task](#event)
+  * [Listing all tasks in the task list](#list)
+  * [Marking a task as done](#done)
+  * [Removing a task from the list](#delete)
+  * [Finding tasks with matching keyword(s)](#find)
+  * [Finding tasks with matching date / date and time](#date)
+  * [Exiting the program](#bye)
   * [Saving the data](#saving-the-data)
   * [Loading the data](#loading-the-data)
 * [FAQ](#faq)
@@ -44,7 +44,8 @@
 >       refer to the number on the left side of the task.  
 >       `TASK_NUMBER` ranges from 1 to 100 inclusively and is an integer.
 
-##### Adding a todo task: `todo`
+<a name="todo"></a>
+#### Adding a todo task: `todo`
 
 Adds a todo task to the task list.  
 Format: `todo DESCRIPTION`  
@@ -52,7 +53,8 @@ Examples:
 * `todo test`
 * `todo math homework`
 
-##### Adding a deadline task: `deadline`
+<a name="deadline"></a>
+#### Adding a deadline task: `deadline`
 
 Adds a deadline task to the task list.  
 Format: `deadline DESCRIPTION /by {DATE/DATE TIME/DESCRIPTION_OF_DATETIME}`  
@@ -61,23 +63,26 @@ Examples:
 * `deadline complete project /by 5/2/2020 1200`
 * `deadline complete project /by wed night`
 
-##### Adding an event task: `event`
+<a name="event"></a>
+#### Adding an event task: `event`
 
 Adds an event task to the task list.  
 Format: `event DESCRIPTION /at {DATE/DATE TIME/DESCRIPTION_OF_DATETIME}`  
 Examples:  
-* `event complete assignment /by 13/12/2039`
-* `event complete project /by 5/2/2020 1200`
-* `event complete project /by friday morning`
+* `event complete assignment /at 13/12/2039`
+* `event complete project /at 5/2/2020 1200`
+* `event complete project /at friday morning`
 
-##### Listing all tasks in the task list: `list`
+<a name="list"></a>
+#### Listing all tasks in the task list: `list`
 
 Shows a list of all tasks.  
 Format: `list`  
 Example:  
 * `list`
 
-##### Marking a task as done: `done`
+<a name="done"></a>
+#### Marking a task as done: `done`
 
 Changes a state of a task to "done".  
 Format: `done TASK_NUMBER`  
@@ -85,7 +90,8 @@ Examples:
 * `done 1`
 * `done 23`
 
-##### Removing a task from the list: `delete`
+<a name="delete"></a>
+#### Removing a task from the list: `delete`
 
 Permanently removes a task from the list.  
 Format: `delete TASK_NUMBER`  
@@ -93,7 +99,8 @@ Examples:
 * `delete 1`
 * `delete 23`
 
-##### Finding tasks with matching keyword(s): `find`
+<a name="find"></a>
+#### Finding tasks with matching keyword(s): `find`
 
 Shows a list of tasks with descriptions which contain the keyword(s).  
 Format: `find KEYWORD`  
@@ -102,7 +109,8 @@ Examples:
 * `find assignment one`
 * `find univers`
 
-##### Finding tasks with matching date / date and time: `date`
+<a name="date"></a>
+#### Finding tasks with matching date / date and time: `date`
 
 Shows a list of scheduled tasks with matching date / date and time.  
 Format: `date {DATE/DATE TIME}`  
@@ -110,18 +118,19 @@ Examples:
 * `date 21/12/2019`
 * `date 21/12/2019 2359`
 
-##### Exiting the program: `bye`
+<a name="bye"></a>
+#### Exiting the program: `bye`
 
 Exits the program.  
 Format: `bye`  
 Example:  
 * `bye`
 
-##### Saving the data
+#### Saving the data
 TaskList data are saved in the hard disk automatically after any command that changes the data. 
 There is no need to save manually.
 
-##### Loading the data
+#### Loading the data
 TaskList data are loaded from the hard disk automatically after starting the program. 
 If the data file does not exist, an empty TaskList will be created instead.
 There is no need to load manually.
