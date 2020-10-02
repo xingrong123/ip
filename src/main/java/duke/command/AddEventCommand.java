@@ -9,7 +9,7 @@ import duke.task.TaskList;
 import java.util.List;
 
 /**
- * Represents the user command to add an event task
+ * Represents the user command to add an event task.
  */
 public class AddEventCommand extends Command {
 

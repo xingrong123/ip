@@ -9,7 +9,7 @@ import duke.task.TaskList;
 
 
 /**
- * Represents the user command to delete a task in the list
+ * Represents the user command to delete a task in the list.
  */
 public class DeleteCommand extends Command{
     public static final String DELETE_KW = "delete";

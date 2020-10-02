@@ -21,8 +21,7 @@ public class Storage {
     private String filePath;
 
     /**
-     * Constructs a new Storage instance by storing the given pathname of the file and changing the
-     * file separator to the one specific the OS of the machine.
+     * Constructs a new Storage instance by storing the given pathname of the file.
      *
      * @param filePath The pathname of the file.
      */
@@ -60,7 +59,7 @@ public class Storage {
      * This method creates the file if it does not exist and saves
      * tasks data in the file.
      *
-     * @param data The string of all the data to be saved in the file
+     * @param data The string of all the data to be saved in the file.
      * @throws DukeException If there is an error writing to the file.
      */
     public void save(String data) throws DukeException {

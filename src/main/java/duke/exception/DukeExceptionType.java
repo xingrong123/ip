@@ -1,7 +1,7 @@
 package duke.exception;
 
 /**
- * Enumeration of all the types of DukeException
+ * Enumeration of all the types of DukeException.
  */
 public enum DukeExceptionType {
     EMPTY_DESCRIPTION,

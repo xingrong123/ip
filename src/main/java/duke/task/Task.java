@@ -77,7 +77,7 @@ public class Task {
     /**
      * Returns the details of the task to be printed in the command line.
      *
-     * @return The details of the todo.
+     * @return The details of the task.
      */
     @Override
     public String toString() {

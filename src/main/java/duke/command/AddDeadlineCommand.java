@@ -9,7 +9,7 @@ import duke.task.TaskList;
 import java.util.List;
 
 /**
- * Represents the user command to add a deadline task
+ * Represents the user command to add a deadline task.
  */
 public class AddDeadlineCommand extends Command {
 

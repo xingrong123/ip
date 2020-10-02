@@ -7,7 +7,7 @@ import duke.task.TaskList;
 import duke.task.Todo;
 
 /**
- * Represents the user command to add a todo task
+ * Represents the user command to add a todo task.
  */
 public class AddTodoCommand extends Command{
 
